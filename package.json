@@ -2,6 +2,8 @@
   "name": "node-ibus-mediacenter",
   "version": "0.0.0",
   "dependencies": {
-    "ibus": "*"
+    "ibus": "*",
+    "log": "*",
+    "cli-color": "*"
   }
 }
