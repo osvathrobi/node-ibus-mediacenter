@@ -11,7 +11,7 @@ var MK4ToMk3CDTextDevice = function(ibusInterface, navOutput) {
     // exposed data
     this.init = init;
     this.sourceId = '3b';
-    this.deviceName = 'Mk4ToMk3TextBridge';
+    this.deviceName = 'MK4ToMk3CDTextDevice';
 
     // events
     ibusInterface.on('data', onData);
@@ -30,7 +30,7 @@ var MK4ToMk3CDTextDevice = function(ibusInterface, navOutput) {
 
     function onData(data) {
         if (data.dst === _self.sourceId) {
-            console.log('Data is for me [', _self.deviceName, ']', data.msg);
+            //console.log('Data is for me [', _self.deviceName, ']', data.msg);
 
             if (data.msg.toString() === dataFlush.toString()) {
                 flushDataToNavigation();

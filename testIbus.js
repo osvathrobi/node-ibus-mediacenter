@@ -14,7 +14,7 @@ var device = '/dev/ttys003';
 var ibusInterface = new IbusInterface(device);
 
 // Ibus debugger
-var ibusDebugger = new IbusDebugger(ibusInterface, ['bf']);
+var ibusDebugger = new IbusDebugger(ibusInterface, ['3b']);
 
 // Graphics Navidagtion Device pirate
 var navOutput = new GraphicsNavigationOutputDevice(ibusInterface);

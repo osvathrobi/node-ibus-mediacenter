@@ -5,6 +5,7 @@ var Log = require('log'),
 
 // Debug Ibus messages
 var IbusDebugger = function(ibusInterface, listenDeviceIds) {
+	
     // self reference
     var _self = this;
 
@@ -28,7 +29,9 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
     }
 
     function printReadableMessage(data) {
-        if ((_self.listenDeviceIds.length === 0) || (_.find(_self.listenDeviceIds, data.dst))) {
+        if ((_self.listenDeviceIds.length === 0) || (_.find(_self.listenDeviceIds, function(val) {
+            return val === data.dst;
+        }))) {
             var msg = '';
             for (var i = 0; i < data.msg.length; i++) {
                 msg += ', 0x' + ((data.msg[i] < 0x10) ? '0' : '') + data.msg[i].toString(16);
