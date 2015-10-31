@@ -4,6 +4,8 @@
   "dependencies": {
     "ibus": "*",
     "log": "*",
-    "cli-color": "*"
+    "cli-color": "*",
+    "underscore": "*",
+    "mpd":"*"
   }
 }

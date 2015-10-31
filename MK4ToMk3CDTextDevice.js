@@ -2,7 +2,8 @@ var Log = require('log'),
     log = new Log('info'),
     clc = require('cli-color');
 
-var MK4To3TextBridgeDevice = function(ibusInterface, navOutput) {
+// Display Mk4 CD-text as Mk3 Options
+var MK4ToMk3CDTextDevice = function(ibusInterface, navOutput) {
 
     // self reference
     var _self = this;
@@ -76,4 +77,4 @@ var MK4To3TextBridgeDevice = function(ibusInterface, navOutput) {
 
 };
 
-module.exports = MK4To3TextBridgeDevice;
+module.exports = MK4ToMk3CDTextDevice;
