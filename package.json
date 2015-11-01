@@ -1,11 +1,12 @@
 {
-  "name": "node-ibus-mediacenter",
-  "version": "0.0.0",
-  "dependencies": {
-    "ibus": "*",
-    "log": "*",
-    "cli-color": "*",
-    "underscore": "*",
-    "mpd":"*"
-  }
+    "name": "node-ibus-mediacenter",
+    "version": "0.0.0",
+    "dependencies": {
+        "ibus": "*",
+        "log": "*",
+        "cli-color": "*",
+        "underscore": "*",
+        "mpd": "*",
+        "keypress": "*"
+    }
 }
