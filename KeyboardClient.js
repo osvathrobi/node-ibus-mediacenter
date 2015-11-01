@@ -12,14 +12,26 @@ var KeyboardClient = function(mpc) {
             process.emit('SIGINT');
         }
 
-        if(key.name === 'n') {
-        	mpc.next();
-        	setTimeout(mpc.info, 100);
+		if(key.name === 'x') {
+        	mpc.play();
         }
 
-        if(key.name === 'p') {
+        if(key.name === 'v') {
+        	mpc.stop();
+        }
+
+        if(key.name === 'c') {
+        	mpc.pause();
+        }
+
+        if(key.name === 'b') {
+        	mpc.next();
+        	mpc.info();
+        }
+
+        if(key.name === 'z') {
         	mpc.previous();
-        	setTimeout(mpc.info, 100);
+        	mpc.info();
         }
 
         if(key.name === 'i') {

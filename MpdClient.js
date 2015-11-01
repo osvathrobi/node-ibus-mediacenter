@@ -19,6 +19,10 @@ var MpdClient = function() {
         port: 6600,
         host: 'localhost',
     });
+
+    this.play = play;
+    this.stop = stop;
+    this.pause = pause;
     this.next = next;
     this.previous = previous;
     this.info = info;
@@ -47,6 +51,18 @@ var MpdClient = function() {
     function _logResultMessage(err, msg) {
         if (err) log.error(msg);
         log.info(msg);
+    }
+
+    function play() {
+        _self.client.sendCommand(cmd("play", []), _logResultMessage);
+    }
+
+    function stop() {
+        _self.client.sendCommand(cmd("stop", []), _logResultMessage);
+    }
+
+    function pause() {
+        _self.client.sendCommand(cmd("pause", []), _logResultMessage);
     }
 
     function next() {
