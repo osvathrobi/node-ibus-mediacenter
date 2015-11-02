@@ -49,8 +49,8 @@ var MpdClient = function() {
     }
 
     function _logResultMessage(err, msg) {
-        if (err) log.error(msg);
-        log.info(msg);
+        if (err) log.error(moduleName + msg);
+        log.info(moduleName + msg);
     }
 
     function play() {
@@ -74,7 +74,8 @@ var MpdClient = function() {
     }
 
     function info() {
-        _self.client.sendCommand(cmd("currentsong", []), _logResultMessage);
+        //_self.client.sendCommand(cmd("currentsong", []), _logResultMessage);
+        _self.client.sendCommand(cmd("list", []), _logResultMessage);
     }
 
 };
