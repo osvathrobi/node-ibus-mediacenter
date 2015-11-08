@@ -75,7 +75,7 @@ var MpdClient = function() {
 
     function info() {
         //_self.client.sendCommand(cmd("currentsong", []), _logResultMessage);
-        _self.client.sendCommand(cmd("list", []), _logResultMessage);
+        _self.client.sendCommand(cmd("list directory", []), _logResultMessage);
     }
 
 };

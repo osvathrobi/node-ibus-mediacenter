@@ -5,7 +5,9 @@ var GraphicsNavigationOutputDevice = require('./GraphicsNavigationOutputDevice.j
 var IbusDebugger = require('./IbusDebugger.js');
 
 var MpdClient = require('./MpdClient.js');
+var XbmcClient = require('./XbmcClient.js');
 var KeyboardClient = require('./KeyboardClient.js');
+var IbusEventClient = require('./IbusEventClient.js');
 
 // config
 var device = '/dev/ttys003';
@@ -15,13 +17,19 @@ var device = '/dev/ttys003';
 var ibusInterface = new IbusInterface(device);
 
 // Mpd Client
-var mpc = new MpdClient();
+//var mpc = new MpdClient();
+
+// Xbmc Client
+var xbmcc = new XbmcClient();
 
 // Keyboard Client
-var keyboardClient = new KeyboardClient(mpc);
+var keyboardClient = new KeyboardClient(xbmcc);
+
+// Ibus Event Client
+var ibusEventClient = new IbusEventClient(ibusInterface, xbmcc);
 
 // Ibus debugger
-var ibusDebugger = new IbusDebugger(ibusInterface, ['3b']);
+var ibusDebugger = new IbusDebugger(ibusInterface, ['F0']);
 
 // Graphics Navidagtion Device pirate
 var navOutput = new GraphicsNavigationOutputDevice(ibusInterface);
