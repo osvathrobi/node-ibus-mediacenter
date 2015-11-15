@@ -8,6 +8,7 @@
         "underscore": "*",
         "mpd": "*",
         "keypress": "*",
-        "xbmc": "*"
+        "xbmc": "*",
+        "onoff": "*"
     }
 }

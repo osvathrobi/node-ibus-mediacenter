@@ -1,4 +1,8 @@
-var TJA1020Handler = require('./TJA1020Handler.js')
+var Log = require('log'),
+    log = new Log('info'),
+    clc = require('cli-color');
+
+var PibusHw4Handler = require('./PibusHw4Handler.js')
 var IbusInterface = require('ibus').IbusInterface;
 var IbusDevices = require('ibus').IbusDevices;
 var MK4ToMk3CDTextDevice = require('./MK4ToMk3CDTextDevice.js');
@@ -49,11 +53,11 @@ function onSignalInt() {
 }
 
 function onUncaughtException(err) {
-    debug.error(err);
+    log.error(err);
 
     // restart app
     restartApp();
-});
+}
 
 function restartApp() {
     shutdown(function() {
