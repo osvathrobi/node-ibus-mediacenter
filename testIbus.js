@@ -19,8 +19,6 @@ var IbusEventClient = require('./IbusEventClient.js');
 var device = '/dev/ttyAMA0';
 //var device = '/dev/cu.usbserial-A601HPGR';
 
-// IBUS communication interface
-var ibusInterface = new IbusInterface(device);
 
 // Mpd Client
 //var mpc = new MpdClient();
@@ -28,14 +26,18 @@ var ibusInterface = new IbusInterface(device);
 // Xbmc Client
 var xbmcc = new XbmcClient();
 
-// Keyboard Client
-var keyboardClient = new KeyboardClient(xbmcc);
+// IBUS communication interface
+var ibusInterface = new IbusInterface(device);
 
 // Ibus Event Client
 var ibusEventClient = new IbusEventClient(ibusInterface, xbmcc);
 
 // Ibus debugger
-var ibusDebugger = new IbusDebugger(ibusInterface, ['F0']);
+var ibusDebugger = new IbusDebugger(ibusInterface, []);
+
+
+// Keyboard Client
+var keyboardClient = new KeyboardClient(xbmcc, ibusDebugger);
 
 // Graphics Navidagtion Device pirate
 var navOutput = new GraphicsNavigationOutputDevice(ibusInterface);
@@ -54,13 +56,24 @@ function onSignalInt() {
     });
 }
 
+var isShuttingDown = false;
+
 function onUncaughtException(err) {
+
     log.error(err);
+
+    if (isShuttingDown) {
+        return;
+    }
+
+    log.info('Restarting app in 5 seconds...');
+
+    isShuttingDown = true;
 
     // restart app
     setTimeout(function() {
-        log.info('Restarting app in 5 seconds...');
         restartApp();
+        isShuttingDown = false;
     }, 5000);
 }
 

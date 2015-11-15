@@ -24,8 +24,7 @@ var IbusEventClient = function(ibusInterface, remoteControlClient) {
     }
 
     function onData(data) {
-        console.log(data);
-
+ 
         var cmpData = compareify(data.src, data.dst, data.msg);
 
         switch (cmpData) {
@@ -79,7 +78,7 @@ var IbusEventClient = function(ibusInterface, remoteControlClient) {
 
     function compareify(src, dst, msg) {
         var r = src.toString() + dst.toString() + msg.toString();
-console.log(r);
+
         return r;
     }
 

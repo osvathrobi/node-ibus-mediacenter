@@ -1,6 +1,6 @@
 var keypress = require('keypress');
 
-var KeyboardClient = function(remoteControlClient) {
+var KeyboardClient = function(remoteControlClient, ibusDebugger) {
     // make `process.stdin` begin emitting "keypress" events
     keypress(process.stdin);
 
@@ -12,31 +12,31 @@ var KeyboardClient = function(remoteControlClient) {
             process.emit('SIGINT');
         }
 
-        /*
-		if(key.name === 'x') {
-        	remoteControlClient.play();
+        
+        if(key.name === 'w') {
+            ibusDebugger.up();
         }
 
-        if(key.name === 'v') {
-        	remoteControlClient.stop();
+        if(key.name === 'a') {
+            ibusDebugger.left();
         }
 
-        if(key.name === 'c') {
-        	remoteControlClient.pause();
+        if(key.name === 's') {
+            ibusDebugger.down();
         }
 
-        if(key.name === 'b') {
-        	remoteControlClient.next();
+        if(key.name === 'd') {
+            ibusDebugger.right();
         }
 
-        if(key.name === 'z') {
-        	remoteControlClient.previous();
+        if(key.name === 'q') {
+            ibusDebugger.back();
         }
 
-        if(key.name === 'i') {
-        	remoteControlClient.info();
+        if(key.name === 'e') {
+            ibusDebugger.select();
         }
-        */
+        
 
         if(key.name === 'up') {
             remoteControlClient.up();

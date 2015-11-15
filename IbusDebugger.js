@@ -5,7 +5,7 @@ var Log = require('log'),
 
 // Debug Ibus messages
 var IbusDebugger = function(ibusInterface, listenDeviceIds) {
-	
+
     // self reference
     var _self = this;
 
@@ -13,6 +13,13 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
     this.init = init;
     this.deviceName = 'Ibus Debugger';
     this.listenDeviceIds = listenDeviceIds || [];
+    this.up = simulateUp;
+    this.left = simulateLeft;
+    this.down = simulateDown;
+    this.right = simulateRight;
+    this.back = simulateBack;
+    this.select = simulateSelect;
+
 
     // events
     ibusInterface.on('data', onData);
@@ -25,7 +32,7 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
     }
 
     function onData(data) {
-        printReadableMessage(data);
+        //printReadableMessage(data);
     }
 
     function printReadableMessage(data) {
@@ -40,6 +47,55 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
             console.log('// ' + data.msg.toString('ascii'));
             console.log('ibusInterface.sendMessage({src: 0x' + data.src + ',dst: 0x' + data.dst + ', msg: new Buffer([' + msg.substr(2), '])});');
         }
+    }
+
+
+    function simulateUp() {
+        ibusInterface.sendMessage({
+            src: 0xf0,
+            dst: 0x68,
+            msg: new Buffer([0x48, 0x13])
+        });
+    }
+
+    function simulateLeft() {
+        ibusInterface.sendMessage({
+            src: 0xf0,
+            dst: 0x68,
+            msg: new Buffer([0x48, 0x12])
+        });
+    }
+
+    function simulateDown() {
+        ibusInterface.sendMessage({
+            src: 0xf0,
+            dst: 0x68,
+            msg: new Buffer([0x48, 0x03])
+        });
+    }
+
+    function simulateRight() {
+        ibusInterface.sendMessage({
+            src: 0xf0,
+            dst: 0x68,
+            msg: new Buffer([0x48, 0x02])
+        });
+    }
+
+    function simulateSelect() {
+        ibusInterface.sendMessage({
+            src: 0xf0,
+            dst: 0x68,
+            msg: new Buffer([0x48, 0x05])
+        });
+    }
+
+    function simulateBack() {
+        ibusInterface.sendMessage({
+            src: 0xf0,
+            dst: 0x68,
+            msg: new Buffer([0x48, 0x11])
+        });
     }
 
 }

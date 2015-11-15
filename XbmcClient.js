@@ -31,7 +31,7 @@ var XbmcClient = function() {
     // implementation
     function init() {
         var connection = new Xbmc.TCPConnection({
-            host: '192.168.1.104',
+            host: '127.0.0.1',
             port: 9090,
             verbose: true,
             username: 'kodi',
