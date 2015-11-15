@@ -1,3 +1,4 @@
+var TJA1020Handler = require('./TJA1020Handler.js')
 var IbusInterface = require('ibus').IbusInterface;
 var IbusDevices = require('ibus').IbusDevices;
 var MK4ToMk3CDTextDevice = require('./MK4ToMk3CDTextDevice.js');
@@ -10,7 +11,8 @@ var KeyboardClient = require('./KeyboardClient.js');
 var IbusEventClient = require('./IbusEventClient.js');
 
 // config
-var device = '/dev/ttys003';
+//var device = '/dev/ttys003';
+var device = '/dev/ttyAMA0';
 //var device = '/dev/cu.usbserial-A601HPGR';
 
 // IBUS communication interface
@@ -39,13 +41,41 @@ var mkTextBridge = new MK4ToMk3CDTextDevice(ibusInterface, navOutput);
 
 // events
 process.on('SIGINT', onSignalInt);
+process.on('uncaughtException', onUncaughtException);
 
 // implementation
 function onSignalInt() {
+    shutdown();
+}
+
+function onUncaughtException(err) {
+    debug.error(err);
+
+    // restart app
+    restartApp();
+});
+
+function restartApp() {
+    shutdown(function() {
+        startup();
+    })
+}
+
+function startup(successFn) {
+    ibusInterface.startup(function() {
+        if (successFn) {
+            successFn();
+        }
+    });
+}
+
+function shutdown(successFn) {
     ibusInterface.shutdown(function() {
-        process.exit();
+        if (successFn) {
+            successFn();
+        }
     });
 }
 
 // main start
-ibusInterface.startup();
+startup();
