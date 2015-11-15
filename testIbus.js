@@ -49,14 +49,19 @@ process.on('uncaughtException', onUncaughtException);
 
 // implementation
 function onSignalInt() {
-    shutdown();
+    shutdown(function() {
+        process.exit();
+    });
 }
 
 function onUncaughtException(err) {
     log.error(err);
 
     // restart app
-    restartApp();
+    setTimeout(function() {
+        log.info('Restarting app in 5 seconds...');
+        restartApp();
+    }, 5000);
 }
 
 function restartApp() {
