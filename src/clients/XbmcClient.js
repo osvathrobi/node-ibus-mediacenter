@@ -15,6 +15,7 @@ var XbmcClient = function() {
     var _self = this;
 
     // exposed data
+    _self.init = init;
     _self.up = up;
     _self.down = down;
     _self.left = left;
@@ -26,12 +27,15 @@ var XbmcClient = function() {
     // events
 
     // local data
-    var xbmcApi = new Xbmc.XbmcApi;
+    var xbmcApi = new Xbmc.XbmcApi({
+        silent: true
+    });
 
     // implementation
     function init() {
+
         var connection = new Xbmc.TCPConnection({
-            host: '127.0.0.1',
+            host: '192.168.1.104',
             port: 9090,
             verbose: true,
             username: 'kodi',
@@ -39,47 +43,22 @@ var XbmcClient = function() {
         });
 
 
-        //xbmcApi.setConnection(connection);
-        xbmcApi = new Xbmc.XbmcApi({
-            silent: true,
-            connection: connection
-        });
+        xbmcApi.setConnection(connection);
 
-        xbmcApi.on('connection:data', function() {
-            console.log('onData');
-        });
-        xbmcApi.on('connection:open', function() {
-            console.log('onOpen');
-        });
-        xbmcApi.on('connection:close', function() {
-            console.log('onClose');
-        });
-        xbmcApi.on('error', function(e) {
-            console.log(e);
-        });
-
-        /*
-        readline = require('readline');
-
-        rl = readline.createInterface({
-            input: process.stdin,
-            output: process.stdout
-        });
-
-        prompt = function() {
-            return rl.question('keyboard> ', function(name) {
-                if (xbmcApi.input[name] != null) {
-                    xbmcApi.input[name]();
-                } else {
-                    console.log("Input." + name + " does not exists");
-                }
-                return prompt();
-            });
-        };
-
-        xbmcApi.on('connection:open', prompt);
-        */
     }
+
+    xbmcApi.on('connection:data', function(data) {
+        console.log('onData', data);
+    });
+    xbmcApi.on('connection:open', function() {
+        console.log('onOpen');
+    });
+    xbmcApi.on('connection:close', function() {
+        console.log('onClose');
+    });
+    xbmcApi.on('error', function(e) {
+        console.log(e);
+    });
 
     function up() {
         xbmcApi.input['Up']();
@@ -109,7 +88,6 @@ var XbmcClient = function() {
         xbmcApi.input['ContextMenu']();
     }
 
-    init();
 };
 
 module.exports = XbmcClient;

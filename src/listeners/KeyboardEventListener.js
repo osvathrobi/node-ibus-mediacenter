@@ -1,69 +1,99 @@
+var Log = require('log'),
+    log = new Log('info'),
+    clc = require('cli-color');
+
 var keypress = require('keypress');
 
-var KeyboardClient = function(remoteControlClient, ibusDebugger) {
-    // make `process.stdin` begin emitting "keypress" events
-    keypress(process.stdin);
+// remoteControlClient, ibusDebugger
+var KeyboardEventListener = function() {
 
-    // listen for the "keypress" event
-    process.stdin.on('keypress', function(ch, key) {
-        //console.log('got "keypress"',ch, key);
+    var _self = this;
 
-        if (key && key.ctrl && key.name == 'c') {
-            process.emit('SIGINT');
-        }
+    _self.init = init;
 
-        
-        if(key.name === 'w') {
-            ibusDebugger.up();
-        }
+    _self.setRemoteControlClient = setRemoteControlClient;
 
-        if(key.name === 'a') {
-            ibusDebugger.left();
-        }
+    _self.remoteControlClient = {};
 
-        if(key.name === 's') {
-            ibusDebugger.down();
-        }
+    function setRemoteControlClient(key, remoteControlClient) {
+        _self.remoteControlClient[key] = remoteControlClient;
+    }
 
-        if(key.name === 'd') {
-            ibusDebugger.right();
-        }
+    function init(successFn) {
+        log.info('[KeyboardEventListener] Starting up..');
 
-        if(key.name === 'q') {
-            ibusDebugger.back();
-        }
+        // make `process.stdin` begin emitting "keypress" events
+        keypress(process.stdin);
 
-        if(key.name === 'e') {
-            ibusDebugger.select();
-        }
-        
+        // listen for the "keypress" event
+        process.stdin.on('keypress', function(ch, key) {
+            //console.log('got "keypress"',ch, key);
 
-        if(key.name === 'up') {
-            remoteControlClient.up();
-        }
-        if(key.name === 'down') {
-            remoteControlClient.down();
-        }
-        if(key.name === 'left') {
-            remoteControlClient.left();
-        }
-        if(key.name === 'right') {
-            remoteControlClient.right();
-        }
-        if(key.name === 'return') {
-            remoteControlClient.select();
-        }
-        if(key.name === 'escape') {
-            remoteControlClient.back();
-        }
-        if(key.name === 'i') {
-            remoteControlClient.contextMenu();
-        }
+            if (key && key.ctrl && key.name == 'c') {
+                process.emit('SIGINT');
+            }
 
-    });
+            if (key && key.ctrl && key.name == 'z') {
+                process.emit('SIGTERM');
+            }
 
-    process.stdin.setRawMode(true);
-    process.stdin.resume();
+
+            if (key.name === 'w') {
+                _self.remoteControlClient['ibus'].up();
+            }
+
+            if (key.name === 'a') {
+                _self.remoteControlClient['ibus'].left();
+            }
+
+            if (key.name === 's') {
+                _self.remoteControlClient['ibus'].down();
+            }
+
+            if (key.name === 'd') {
+                _self.remoteControlClient['ibus'].right();
+            }
+
+            if (key.name === 'q') {
+                _self.remoteControlClient['ibus'].back();
+            }
+
+            if (key.name === 'e') {
+                _self.remoteControlClient['ibus'].select();
+            }
+
+
+            if (key.name === 'up') {
+                _self.remoteControlClient['xbmc'].up();
+            }
+            if (key.name === 'down') {
+                _self.remoteControlClient['xbmc'].down();
+            }
+            if (key.name === 'left') {
+                _self.remoteControlClient['xbmc'].left();
+            }
+            if (key.name === 'right') {
+                _self.remoteControlClient['xbmc'].right();
+            }
+            if (key.name === 'return') {
+                _self.remoteControlClient['xbmc'].select();
+            }
+            if (key.name === 'escape') {
+                _self.remoteControlClient['xbmc'].back();
+            }
+            if (key.name === 'i') {
+                _self.remoteControlClient['xbmc'].contextMenu();
+            }
+
+        });
+
+        process.stdin.setRawMode(true);
+        process.stdin.resume();
+
+        if(successFn) {
+            successFn();
+        }
+    }
 }
 
-module.exports = KeyboardClient;
+module.exports = KeyboardEventListener;

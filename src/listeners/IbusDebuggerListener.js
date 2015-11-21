@@ -4,7 +4,7 @@ var Log = require('log'),
     _ = require('underscore');
 
 // Debug Ibus messages
-var IbusDebugger = function(ibusInterface, listenDeviceIds) {
+var IbusDebuggerListener = function() {
 
     // self reference
     var _self = this;
@@ -12,7 +12,7 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
     // exposed data
     this.init = init;
     this.deviceName = 'Ibus Debugger';
-    this.listenDeviceIds = listenDeviceIds || [];
+    this.listenDeviceIds = [];
     this.up = simulateUp;
     this.left = simulateLeft;
     this.down = simulateDown;
@@ -20,15 +20,23 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
     this.back = simulateBack;
     this.select = simulateSelect;
 
-
-    // events
-    ibusInterface.on('data', onData);
-
     // local data
+    this.ibusInterface = {};
 
     // implementation
-    function init() {
+    function init(ibusInterface, listenDeviceIds, successFn) {
+        log.info('[IbusDebuggerListener] Starting up..');
 
+        // set interfaces
+        _self.ibusInterface = ibusInterface;
+        _self.listenDeviceIds = listenDeviceIds || [];
+
+        // events
+        _self.ibusInterface.on('data', onData);
+
+        if (successFn) {
+            successFn();
+        }
     }
 
     function onData(data) {
@@ -51,7 +59,7 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
 
 
     function simulateUp() {
-        ibusInterface.sendMessage({
+        _self.ibusInterface.sendMessage({
             src: 0xf0,
             dst: 0x68,
             msg: new Buffer([0x48, 0x13])
@@ -59,7 +67,7 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
     }
 
     function simulateLeft() {
-        ibusInterface.sendMessage({
+        _self.ibusInterface.sendMessage({
             src: 0xf0,
             dst: 0x68,
             msg: new Buffer([0x48, 0x12])
@@ -67,7 +75,7 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
     }
 
     function simulateDown() {
-        ibusInterface.sendMessage({
+        _self.ibusInterface.sendMessage({
             src: 0xf0,
             dst: 0x68,
             msg: new Buffer([0x48, 0x03])
@@ -75,7 +83,7 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
     }
 
     function simulateRight() {
-        ibusInterface.sendMessage({
+        _self.ibusInterface.sendMessage({
             src: 0xf0,
             dst: 0x68,
             msg: new Buffer([0x48, 0x02])
@@ -83,7 +91,7 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
     }
 
     function simulateSelect() {
-        ibusInterface.sendMessage({
+        _self.ibusInterface.sendMessage({
             src: 0xf0,
             dst: 0x68,
             msg: new Buffer([0x48, 0x05])
@@ -91,7 +99,7 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
     }
 
     function simulateBack() {
-        ibusInterface.sendMessage({
+        _self.ibusInterface.sendMessage({
             src: 0xf0,
             dst: 0x68,
             msg: new Buffer([0x48, 0x11])
@@ -100,4 +108,4 @@ var IbusDebugger = function(ibusInterface, listenDeviceIds) {
 
 }
 
-module.exports = IbusDebugger;
+module.exports = IbusDebuggerListener;
