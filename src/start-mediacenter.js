@@ -24,7 +24,7 @@ if (cluster.isMaster) {
 
     var MK4ToMk3CDTextDevice = require('./devices/MK4ToMk3CDTextDevice.js');
     var GraphicsNavigationOutputDevice = require('./devices/GraphicsNavigationOutputDevice.js');
-    var IbusDebuggerListener = require('./listeners/IbusDebuggerListener.js');
+    var IbusDebuggerDevice = require('./devices/IbusDebuggerDevice.js');
 
     var MpdClient = require('./clients/MpdClient.js');
     var XbmcClient = require('./clients/XbmcClient.js');
@@ -37,6 +37,9 @@ if (cluster.isMaster) {
     var device = '/dev/cu.usbserial-A601HPGR';
 
 
+    // IBUS communication interface
+    var ibusInterface = new IbusInterface(device);
+
     // Keyboard Client
     var keyboardEventListener = new KeyboardEventListener();
 
@@ -44,16 +47,13 @@ if (cluster.isMaster) {
     //var mpc = new MpdClient();
 
     // Xbmc Client
-    var xbmcc = new XbmcClient();
-
-    // IBUS communication interface
-    var ibusInterface = new IbusInterface(device);
+    var xbmcc = new XbmcClient();    
 
     // Ibus Event Client
-    //var ibusEventClient = new IbusEventClient(ibusInterface, xbmcc);
+    var ibusEventClient = new IbusEventClient();
 
     // Ibus debugger
-    var ibusDebuggerListener = new IbusDebuggerListener();
+    var ibusDebuggerDevice = new IbusDebuggerDevice();
 
     // Graphics Navidagtion Device pirate
     //var navOutput = new GraphicsNavigationOutputDevice(ibusInterface);
@@ -105,24 +105,23 @@ if (cluster.isMaster) {
     }
 
     function startup(successFn) {
-        // init Ibus interface
-        ibusInterface.startup(function() {
-            if (successFn) {
-                successFn();
-            }
-        });
+        // init ibus serial interface
+        ibusInterface.startup();        
 
-        // xbmc startup
+        // ibus debugger
+        ibusDebuggerDevice.init(ibusInterface, []);
+
+        // xbmc client startup
         xbmcc.init();
-
-        // ibus debugger listener
-        ibusDebuggerListener.init(ibusInterface, []);
 
         // init keyboard listeren
         keyboardEventListener.init();
         keyboardEventListener.setRemoteControlClient('xbmc', xbmcc);
-        keyboardEventListener.setRemoteControlClient('ibus', ibusDebuggerListener);
+        keyboardEventListener.setRemoteControlClient('ibus', ibusDebuggerDevice);        
 
+        // init ibus event client
+        ibusEventClient.init(ibusInterface);
+        ibusEventClient.setRemoteControlClient('xbmc', xbmcc);
     }
 
     function shutdown(successFn) {

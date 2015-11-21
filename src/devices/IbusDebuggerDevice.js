@@ -1,10 +1,10 @@
 var Log = require('log'),
-    log = new Log('info'),
+    log = new Log('debug'),
     clc = require('cli-color'),
     _ = require('underscore');
 
 // Debug Ibus messages
-var IbusDebuggerListener = function() {
+var IbusDebuggerDevice = function() {
 
     // self reference
     var _self = this;
@@ -25,7 +25,7 @@ var IbusDebuggerListener = function() {
 
     // implementation
     function init(ibusInterface, listenDeviceIds, successFn) {
-        log.info('[IbusDebuggerListener] Starting up..');
+        log.debug('[IbusDebuggerDevice] Starting up..');
 
         // set interfaces
         _self.ibusInterface = ibusInterface;
@@ -40,6 +40,7 @@ var IbusDebuggerListener = function() {
     }
 
     function onData(data) {
+        log.debug('[IbusDebuggerListener] ', data);
         //printReadableMessage(data);
     }
 
@@ -108,4 +109,4 @@ var IbusDebuggerListener = function() {
 
 }
 
-module.exports = IbusDebuggerListener;
+module.exports = IbusDebuggerDevice;

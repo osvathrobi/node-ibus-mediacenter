@@ -1,0 +1,1110 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@3.3.5
+3 info using node@v0.10.26
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData onoff
+20 silly mapToRegistry name onoff
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/onoff
+24 verbose request uri https://registry.npmjs.org/onoff
+25 verbose request no auth needed
+26 info attempt registry request try #1 at 11:19:20
+27 verbose request using bearer token for auth
+28 verbose request id a1aee80af4b9ea30
+29 verbose etag "DXIATTTDSPZ26CG1H96YHJEA6"
+30 http request GET https://registry.npmjs.org/onoff
+31 http 304 https://registry.npmjs.org/onoff
+32 verbose headers { 'cache-control': 'max-age=60',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Sat, 21 Nov 2015 09:19:20 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-fra1236-FRA',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1448097560.629447,VS0,VE104' }
+33 silly get cb [ 304,
+33 silly get   { 'cache-control': 'max-age=60',
+33 silly get     'accept-ranges': 'bytes',
+33 silly get     date: 'Sat, 21 Nov 2015 09:19:20 GMT',
+33 silly get     via: '1.1 varnish',
+33 silly get     connection: 'keep-alive',
+33 silly get     'x-served-by': 'cache-fra1236-FRA',
+33 silly get     'x-cache': 'MISS',
+33 silly get     'x-cache-hits': '0',
+33 silly get     'x-timer': 'S1448097560.629447,VS0,VE104' } ]
+34 verbose etag https://registry.npmjs.org/onoff from cache
+35 verbose get saving onoff to /Users/robert/.npm/registry.npmjs.org/onoff/.cache.json
+36 silly resolveWithNewModule onoff@1.0.3 checking installable status
+37 silly cache add args [ 'onoff@*', null ]
+38 verbose cache add spec onoff@*
+39 silly cache add parsed spec { raw: 'onoff@*',
+39 silly cache add   scope: null,
+39 silly cache add   name: 'onoff',
+39 silly cache add   rawSpec: '*',
+39 silly cache add   spec: '*',
+39 silly cache add   type: 'range' }
+40 silly addNamed onoff@*
+41 verbose addNamed "*" is a valid semver range for onoff
+42 silly addNameRange { name: 'onoff', range: '*', hasData: false }
+43 silly mapToRegistry name onoff
+44 silly mapToRegistry using default registry
+45 silly mapToRegistry registry https://registry.npmjs.org/
+46 silly mapToRegistry uri https://registry.npmjs.org/onoff
+47 verbose addNameRange registry:https://registry.npmjs.org/onoff not in flight; fetching
+48 verbose get https://registry.npmjs.org/onoff not expired, no request
+49 silly addNameRange number 2 { name: 'onoff', range: '*', hasData: true }
+50 silly addNameRange versions [ 'onoff',
+50 silly addNameRange   [ '0.0.1',
+50 silly addNameRange     '0.1.0',
+50 silly addNameRange     '0.1.2',
+50 silly addNameRange     '0.1.3',
+50 silly addNameRange     '0.1.4',
+50 silly addNameRange     '0.1.5',
+50 silly addNameRange     '0.1.6',
+50 silly addNameRange     '0.1.7',
+50 silly addNameRange     '0.2.0',
+50 silly addNameRange     '0.2.1',
+50 silly addNameRange     '0.2.2',
+50 silly addNameRange     '0.2.3',
+50 silly addNameRange     '0.3.0',
+50 silly addNameRange     '0.3.1',
+50 silly addNameRange     '0.3.2',
+50 silly addNameRange     '1.0.0',
+50 silly addNameRange     '1.0.1',
+50 silly addNameRange     '1.0.2',
+50 silly addNameRange     '1.0.3' ] ]
+51 silly addNamed onoff@1.0.3
+52 verbose addNamed "1.0.3" is a plain semver version for onoff
+53 silly cache afterAdd onoff@1.0.3
+54 verbose afterAdd /Users/robert/.npm/onoff/1.0.3/package/package.json not in flight; writing
+55 verbose afterAdd /Users/robert/.npm/onoff/1.0.3/package/package.json written
+56 silly fetchOtherPackageData node-pre-gyp-github@github:jacobrosenthal/node-pre-gyp-github#production
+57 silly cache add args [ 'node-pre-gyp-github@github:jacobrosenthal/node-pre-gyp-github#production',
+57 silly cache add   null ]
+58 verbose cache add spec node-pre-gyp-github@github:jacobrosenthal/node-pre-gyp-github#production
+59 silly cache add parsed spec { raw: 'node-pre-gyp-github@github:jacobrosenthal/node-pre-gyp-github#production',
+59 silly cache add   scope: null,
+59 silly cache add   name: 'node-pre-gyp-github',
+59 silly cache add   rawSpec: 'github:jacobrosenthal/node-pre-gyp-github#production',
+59 silly cache add   spec: 'github:jacobrosenthal/node-pre-gyp-github#production',
+59 silly cache add   type: 'hosted',
+59 silly cache add   hosted:
+59 silly cache add    { type: 'github',
+59 silly cache add      ssh: 'git@github.com:jacobrosenthal/node-pre-gyp-github.git#production',
+59 silly cache add      sshUrl: 'git+ssh://git@github.com/jacobrosenthal/node-pre-gyp-github.git#production',
+59 silly cache add      httpsUrl: 'git+https://github.com/jacobrosenthal/node-pre-gyp-github.git#production',
+59 silly cache add      gitUrl: 'git://github.com/jacobrosenthal/node-pre-gyp-github.git#production',
+59 silly cache add      shortcut: 'github:jacobrosenthal/node-pre-gyp-github#production',
+59 silly cache add      directUrl: 'https://raw.githubusercontent.com/jacobrosenthal/node-pre-gyp-github/production/package.json' } }
+60 verbose addRemoteGit caching github:jacobrosenthal/node-pre-gyp-github#production
+61 verbose addRemoteGit jacobrosenthal/node-pre-gyp-github#production is a repository hosted by github
+62 silly tryGitProto attempting to clone git://github.com/jacobrosenthal/node-pre-gyp-github.git#production
+63 silly tryClone cloning jacobrosenthal/node-pre-gyp-github#production via git://github.com/jacobrosenthal/node-pre-gyp-github.git#production
+64 verbose tryClone git-github-com-jacobrosenthal-node-pre-gyp-github-git-production-00f1b2658a8ab0261b1b6e8aa994ae37 not in flight; caching
+65 info git [ 'config', '--get', 'remote.origin.url' ]
+66 silly validateExistingRemote jacobrosenthal/node-pre-gyp-github#production remote.origin.url: git://github.com/jacobrosenthal/node-pre-gyp-github.git
+67 verbose validateExistingRemote jacobrosenthal/node-pre-gyp-github#production is updating existing cached remote /Users/robert/.npm/_git-remotes/git-github-com-jacobrosenthal-node-pre-gyp-github-git-production-00f1b2658a8ab0261b1b6e8aa994ae37
+68 info git [ 'fetch', '-a', 'origin' ]
+69 verbose updateRemote git fetch -a origin (git://github.com/jacobrosenthal/node-pre-gyp-github.git)
+70 verbose setPermissions jacobrosenthal/node-pre-gyp-github#production set permissions on /Users/robert/.npm/_git-remotes/git-github-com-jacobrosenthal-node-pre-gyp-github-git-production-00f1b2658a8ab0261b1b6e8aa994ae37
+71 verbose resolveHead jacobrosenthal/node-pre-gyp-github#production original treeish: production
+72 info git [ 'rev-list', '-n1', 'production' ]
+73 silly resolveHead jacobrosenthal/node-pre-gyp-github#production resolved treeish: cd28d5e71cd99b1d64d786a16a03db811d757234
+74 verbose resolveHead jacobrosenthal/node-pre-gyp-github#production resolved Git URL: git://github.com/jacobrosenthal/node-pre-gyp-github.git#cd28d5e71cd99b1d64d786a16a03db811d757234
+75 silly resolveHead Git working directory: /var/folders/gg/v08r8_095rx6s3gt_np7273r0000gn/T/npm-65192-56d96f77/git-cache-1bba30e0b7b8981a60ce453ee64bddd4/cd28d5e71cd99b1d64d786a16a03db811d757234
+76 info git [ 'clone',
+76 info git   '/Users/robert/.npm/_git-remotes/git-github-com-jacobrosenthal-node-pre-gyp-github-git-production-00f1b2658a8ab0261b1b6e8aa994ae37',
+76 info git   '/var/folders/gg/v08r8_095rx6s3gt_np7273r0000gn/T/npm-65192-56d96f77/git-cache-1bba30e0b7b8981a60ce453ee64bddd4/cd28d5e71cd99b1d64d786a16a03db811d757234' ]
+77 verbose cloneResolved jacobrosenthal/node-pre-gyp-github#production clone Cloning into '/var/folders/gg/v08r8_095rx6s3gt_np7273r0000gn/T/npm-65192-56d96f77/git-cache-1bba30e0b7b8981a60ce453ee64bddd4/cd28d5e71cd99b1d64d786a16a03db811d757234'...
+77 verbose cloneResolved done.
+78 info git [ 'checkout', 'cd28d5e71cd99b1d64d786a16a03db811d757234' ]
+79 verbose checkoutTreeish jacobrosenthal/node-pre-gyp-github#production checkout Note: checking out 'cd28d5e71cd99b1d64d786a16a03db811d757234'.
+79 verbose checkoutTreeish
+79 verbose checkoutTreeish You are in 'detached HEAD' state. You can look around, make experimental
+79 verbose checkoutTreeish changes and commit them, and you can discard any commits you make in this
+79 verbose checkoutTreeish state without impacting any branches by performing another checkout.
+79 verbose checkoutTreeish
+79 verbose checkoutTreeish If you want to create a new branch to retain commits you create, you may
+79 verbose checkoutTreeish do so (now or later) by using -b with the checkout command again. Example:
+79 verbose checkoutTreeish
+79 verbose checkoutTreeish   git checkout -b <new-branch-name>
+79 verbose checkoutTreeish
+79 verbose checkoutTreeish HEAD is now at cd28d5e... Merge branch 'no-drafts' into production
+80 verbose addLocalDirectory /Users/robert/.npm/node-pre-gyp-github/1.0.5/package.tgz not in flight; packing
+81 verbose tar pack [ '/Users/robert/.npm/node-pre-gyp-github/1.0.5/package.tgz',
+81 verbose tar pack   '/var/folders/gg/v08r8_095rx6s3gt_np7273r0000gn/T/npm-65192-56d96f77/git-cache-1bba30e0b7b8981a60ce453ee64bddd4/cd28d5e71cd99b1d64d786a16a03db811d757234' ]
+82 verbose tarball /Users/robert/.npm/node-pre-gyp-github/1.0.5/package.tgz
+83 verbose folder /var/folders/gg/v08r8_095rx6s3gt_np7273r0000gn/T/npm-65192-56d96f77/git-cache-1bba30e0b7b8981a60ce453ee64bddd4/cd28d5e71cd99b1d64d786a16a03db811d757234
+84 verbose addLocalTarball adding from inside cache /Users/robert/.npm/node-pre-gyp-github/1.0.5/package.tgz
+85 verbose addRemoteGit data._from: jacobrosenthal/node-pre-gyp-github#production
+86 verbose addRemoteGit data._resolved: git://github.com/jacobrosenthal/node-pre-gyp-github.git#cd28d5e71cd99b1d64d786a16a03db811d757234
+87 silly cache afterAdd node-pre-gyp-github@1.0.5
+88 verbose afterAdd /Users/robert/.npm/node-pre-gyp-github/1.0.5/package/package.json not in flight; writing
+89 verbose afterAdd /Users/robert/.npm/node-pre-gyp-github/1.0.5/package/package.json written
+90 silly resolveWithNewModule node-pre-gyp-github@1.0.5 checking installable status
+91 silly fetchNamedPackageData epoll
+92 silly mapToRegistry name epoll
+93 silly mapToRegistry using default registry
+94 silly mapToRegistry registry https://registry.npmjs.org/
+95 silly mapToRegistry uri https://registry.npmjs.org/epoll
+96 verbose request uri https://registry.npmjs.org/epoll
+97 verbose request no auth needed
+98 info attempt registry request try #1 at 11:19:21
+99 verbose request using bearer token for auth
+100 verbose etag "1EN9BAE5H44IDXRCFFDPXY0AZ"
+101 http request GET https://registry.npmjs.org/epoll
+102 http 304 https://registry.npmjs.org/epoll
+103 verbose headers { 'cache-control': 'max-age=60',
+103 verbose headers   'accept-ranges': 'bytes',
+103 verbose headers   date: 'Sat, 21 Nov 2015 09:19:22 GMT',
+103 verbose headers   via: '1.1 varnish',
+103 verbose headers   connection: 'keep-alive',
+103 verbose headers   'x-served-by': 'cache-fra1232-FRA',
+103 verbose headers   'x-cache': 'MISS',
+103 verbose headers   'x-cache-hits': '0',
+103 verbose headers   'x-timer': 'S1448097562.067754,VS0,VE179' }
+104 silly get cb [ 304,
+104 silly get   { 'cache-control': 'max-age=60',
+104 silly get     'accept-ranges': 'bytes',
+104 silly get     date: 'Sat, 21 Nov 2015 09:19:22 GMT',
+104 silly get     via: '1.1 varnish',
+104 silly get     connection: 'keep-alive',
+104 silly get     'x-served-by': 'cache-fra1232-FRA',
+104 silly get     'x-cache': 'MISS',
+104 silly get     'x-cache-hits': '0',
+104 silly get     'x-timer': 'S1448097562.067754,VS0,VE179' } ]
+105 verbose etag https://registry.npmjs.org/epoll from cache
+106 verbose get saving epoll to /Users/robert/.npm/registry.npmjs.org/epoll/.cache.json
+107 silly resolveWithNewModule epoll@0.1.16 checking installable status
+108 silly cache add args [ 'epoll@~0.1.16', null ]
+109 verbose cache add spec epoll@~0.1.16
+110 silly cache add parsed spec { raw: 'epoll@~0.1.16',
+110 silly cache add   scope: null,
+110 silly cache add   name: 'epoll',
+110 silly cache add   rawSpec: '~0.1.16',
+110 silly cache add   spec: '>=0.1.16 <0.2.0',
+110 silly cache add   type: 'range' }
+111 silly addNamed epoll@>=0.1.16 <0.2.0
+112 verbose addNamed ">=0.1.16 <0.2.0" is a valid semver range for epoll
+113 silly addNameRange { name: 'epoll', range: '>=0.1.16 <0.2.0', hasData: false }
+114 silly mapToRegistry name epoll
+115 silly mapToRegistry using default registry
+116 silly mapToRegistry registry https://registry.npmjs.org/
+117 silly mapToRegistry uri https://registry.npmjs.org/epoll
+118 verbose addNameRange registry:https://registry.npmjs.org/epoll not in flight; fetching
+119 verbose get https://registry.npmjs.org/epoll not expired, no request
+120 silly addNameRange number 2 { name: 'epoll', range: '>=0.1.16 <0.2.0', hasData: true }
+121 silly addNameRange versions [ 'epoll',
+121 silly addNameRange   [ '0.0.1',
+121 silly addNameRange     '0.0.2',
+121 silly addNameRange     '0.0.3',
+121 silly addNameRange     '0.0.4',
+121 silly addNameRange     '0.0.5',
+121 silly addNameRange     '0.0.6',
+121 silly addNameRange     '0.0.7',
+121 silly addNameRange     '0.0.8',
+121 silly addNameRange     '0.1.0',
+121 silly addNameRange     '0.1.1',
+121 silly addNameRange     '0.1.2',
+121 silly addNameRange     '0.1.3',
+121 silly addNameRange     '0.1.4',
+121 silly addNameRange     '0.1.5',
+121 silly addNameRange     '0.1.7',
+121 silly addNameRange     '0.1.8',
+121 silly addNameRange     '0.1.9',
+121 silly addNameRange     '0.1.10',
+121 silly addNameRange     '0.1.11',
+121 silly addNameRange     '0.1.12',
+121 silly addNameRange     '0.1.13',
+121 silly addNameRange     '0.1.14',
+121 silly addNameRange     '0.1.15',
+121 silly addNameRange     '0.1.16' ] ]
+122 silly addNamed epoll@0.1.16
+123 verbose addNamed "0.1.16" is a plain semver version for epoll
+124 silly cache afterAdd epoll@0.1.16
+125 verbose afterAdd /Users/robert/.npm/epoll/0.1.16/package/package.json not in flight; writing
+126 verbose afterAdd /Users/robert/.npm/epoll/0.1.16/package/package.json written
+127 silly fetchNamedPackageData nan
+128 silly mapToRegistry name nan
+129 silly mapToRegistry using default registry
+130 silly mapToRegistry registry https://registry.npmjs.org/
+131 silly mapToRegistry uri https://registry.npmjs.org/nan
+132 verbose request uri https://registry.npmjs.org/nan
+133 verbose request no auth needed
+134 info attempt registry request try #1 at 11:19:22
+135 verbose request using bearer token for auth
+136 verbose etag "AJ6KMRIMA4RV6KG19617BROM9"
+137 http request GET https://registry.npmjs.org/nan
+138 http 200 https://registry.npmjs.org/nan
+139 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+139 verbose headers   etag: '"A792ZB4LRJE9K13ELZ0UIQEDV"',
+139 verbose headers   'content-type': 'application/json',
+139 verbose headers   'cache-control': 'max-age=60',
+139 verbose headers   'content-length': '100091',
+139 verbose headers   'accept-ranges': 'bytes',
+139 verbose headers   date: 'Sat, 21 Nov 2015 09:19:22 GMT',
+139 verbose headers   via: '1.1 varnish',
+139 verbose headers   connection: 'keep-alive',
+139 verbose headers   'x-served-by': 'cache-fra1243-FRA',
+139 verbose headers   'x-cache': 'MISS',
+139 verbose headers   'x-cache-hits': '0',
+139 verbose headers   'x-timer': 'S1448097562.429642,VS0,VE509',
+139 verbose headers   vary: 'Accept' }
+140 silly get cb [ 200,
+140 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+140 silly get     etag: '"A792ZB4LRJE9K13ELZ0UIQEDV"',
+140 silly get     'content-type': 'application/json',
+140 silly get     'cache-control': 'max-age=60',
+140 silly get     'content-length': '100091',
+140 silly get     'accept-ranges': 'bytes',
+140 silly get     date: 'Sat, 21 Nov 2015 09:19:22 GMT',
+140 silly get     via: '1.1 varnish',
+140 silly get     connection: 'keep-alive',
+140 silly get     'x-served-by': 'cache-fra1243-FRA',
+140 silly get     'x-cache': 'MISS',
+140 silly get     'x-cache-hits': '0',
+140 silly get     'x-timer': 'S1448097562.429642,VS0,VE509',
+140 silly get     vary: 'Accept' } ]
+141 verbose get saving nan to /Users/robert/.npm/registry.npmjs.org/nan/.cache.json
+142 silly resolveWithNewModule nan@2.1.0 checking installable status
+143 silly cache add args [ 'nan@~2.1.0', null ]
+144 verbose cache add spec nan@~2.1.0
+145 silly cache add parsed spec { raw: 'nan@~2.1.0',
+145 silly cache add   scope: null,
+145 silly cache add   name: 'nan',
+145 silly cache add   rawSpec: '~2.1.0',
+145 silly cache add   spec: '>=2.1.0 <2.2.0',
+145 silly cache add   type: 'range' }
+146 silly addNamed nan@>=2.1.0 <2.2.0
+147 verbose addNamed ">=2.1.0 <2.2.0" is a valid semver range for nan
+148 silly addNameRange { name: 'nan', range: '>=2.1.0 <2.2.0', hasData: false }
+149 silly mapToRegistry name nan
+150 silly mapToRegistry using default registry
+151 silly mapToRegistry registry https://registry.npmjs.org/
+152 silly mapToRegistry uri https://registry.npmjs.org/nan
+153 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+154 verbose get https://registry.npmjs.org/nan not expired, no request
+155 silly addNameRange number 2 { name: 'nan', range: '>=2.1.0 <2.2.0', hasData: true }
+156 silly addNameRange versions [ 'nan',
+156 silly addNameRange   [ '0.3.0-wip',
+156 silly addNameRange     '0.3.0-wip2',
+156 silly addNameRange     '0.3.0',
+156 silly addNameRange     '0.3.1',
+156 silly addNameRange     '0.3.2',
+156 silly addNameRange     '0.4.0',
+156 silly addNameRange     '0.4.1',
+156 silly addNameRange     '0.4.2',
+156 silly addNameRange     '0.4.3',
+156 silly addNameRange     '0.4.4',
+156 silly addNameRange     '0.5.0',
+156 silly addNameRange     '0.5.1',
+156 silly addNameRange     '0.5.2',
+156 silly addNameRange     '0.6.0',
+156 silly addNameRange     '0.7.0',
+156 silly addNameRange     '0.7.1',
+156 silly addNameRange     '0.8.0',
+156 silly addNameRange     '1.0.0',
+156 silly addNameRange     '1.1.0',
+156 silly addNameRange     '1.1.1',
+156 silly addNameRange     '1.1.2',
+156 silly addNameRange     '1.2.0',
+156 silly addNameRange     '1.3.0',
+156 silly addNameRange     '1.4.0',
+156 silly addNameRange     '1.4.1',
+156 silly addNameRange     '1.5.0',
+156 silly addNameRange     '1.4.2',
+156 silly addNameRange     '1.4.3',
+156 silly addNameRange     '1.5.1',
+156 silly addNameRange     '1.5.2',
+156 silly addNameRange     '1.6.0',
+156 silly addNameRange     '1.5.3',
+156 silly addNameRange     '1.6.1',
+156 silly addNameRange     '1.6.2',
+156 silly addNameRange     '1.7.0',
+156 silly addNameRange     '1.8.0',
+156 silly addNameRange     '1.8.1',
+156 silly addNameRange     '1.8.2',
+156 silly addNameRange     '1.8.3',
+156 silly addNameRange     '1.8.4',
+156 silly addNameRange     '1.9.0',
+156 silly addNameRange     '2.0.0',
+156 silly addNameRange     '2.0.1',
+156 silly addNameRange     '2.0.2',
+156 silly addNameRange     '2.0.3',
+156 silly addNameRange     '2.0.4',
+156 silly addNameRange     '2.0.5',
+156 silly addNameRange     '2.0.6',
+156 silly addNameRange     '2.0.7',
+156 silly addNameRange     '2.0.8',
+156 silly addNameRange     '2.0.9',
+156 silly addNameRange     '2.1.0' ] ]
+157 silly addNamed nan@2.1.0
+158 verbose addNamed "2.1.0" is a plain semver version for nan
+159 silly cache afterAdd nan@2.1.0
+160 verbose afterAdd /Users/robert/.npm/nan/2.1.0/package/package.json not in flight; writing
+161 verbose afterAdd /Users/robert/.npm/nan/2.1.0/package/package.json written
+162 silly loadAllDepsIntoIdealTree Finishing
+163 silly idealTree:prePrune node-ibus-mediacenter@0.0.0
+163 silly idealTree:prePrune ├── ansi-regex@2.0.0
+163 silly idealTree:prePrune ├── ansi-styles@2.1.0
+163 silly idealTree:prePrune ├── asn1@0.1.11
+163 silly idealTree:prePrune ├── assert-plus@0.1.5
+163 silly idealTree:prePrune ├── async@0.9.0
+163 silly idealTree:prePrune ├── aws-sign2@0.6.0
+163 silly idealTree:prePrune ├── bindings@1.2.1
+163 silly idealTree:prePrune ├── bl@1.0.0
+163 silly idealTree:prePrune ├── boom@2.10.1
+163 silly idealTree:prePrune ├── caseless@0.11.0
+163 silly idealTree:prePrune ├── chalk@1.1.1
+163 silly idealTree:prePrune ├── clarinet@0.11.0
+163 silly idealTree:prePrune ├── cli-color@1.1.0
+163 silly idealTree:prePrune ├── combined-stream@1.0.5
+163 silly idealTree:prePrune ├── commander@2.9.0
+163 silly idealTree:prePrune ├── core-util-is@1.0.1
+163 silly idealTree:prePrune ├── cryptiles@2.0.5
+163 silly idealTree:prePrune ├── ctype@0.5.3
+163 silly idealTree:prePrune ├── d@0.1.1
+163 silly idealTree:prePrune ├── debug@2.2.0
+163 silly idealTree:prePrune ├── delayed-stream@1.0.0
+163 silly idealTree:prePrune ├─┬ epoll@0.1.16
+163 silly idealTree:prePrune │ └── nan@2.1.0
+163 silly idealTree:prePrune ├── es5-ext@0.10.8
+163 silly idealTree:prePrune ├── es6-iterator@2.0.0
+163 silly idealTree:prePrune ├── es6-symbol@3.0.1
+163 silly idealTree:prePrune ├─┬ es6-weak-map@0.1.4
+163 silly idealTree:prePrune │ ├── es6-iterator@0.1.3
+163 silly idealTree:prePrune │ └── es6-symbol@2.0.1
+163 silly idealTree:prePrune ├── escape-string-regexp@1.0.3
+163 silly idealTree:prePrune ├── event-emitter@0.3.4
+163 silly idealTree:prePrune ├── extend@3.0.0
+163 silly idealTree:prePrune ├── forever-agent@0.6.1
+163 silly idealTree:prePrune ├─┬ form-data@1.0.0-rc3
+163 silly idealTree:prePrune │ └── async@1.5.0
+163 silly idealTree:prePrune ├── generate-function@2.0.0
+163 silly idealTree:prePrune ├── generate-object-property@1.2.0
+163 silly idealTree:prePrune ├── github@0.2.4
+163 silly idealTree:prePrune ├── graceful-readlink@1.0.1
+163 silly idealTree:prePrune ├── har-validator@2.0.2
+163 silly idealTree:prePrune ├── has-ansi@2.0.0
+163 silly idealTree:prePrune ├── hawk@3.1.1
+163 silly idealTree:prePrune ├── hoek@2.16.3
+163 silly idealTree:prePrune ├── http-signature@0.11.0
+163 silly idealTree:prePrune ├── ibus@0.0.8
+163 silly idealTree:prePrune ├── inherits@2.0.1
+163 silly idealTree:prePrune ├── is-my-json-valid@2.12.3
+163 silly idealTree:prePrune ├── is-property@1.0.2
+163 silly idealTree:prePrune ├── isarray@0.0.1
+163 silly idealTree:prePrune ├── isstream@0.1.2
+163 silly idealTree:prePrune ├── json-stringify-safe@5.0.1
+163 silly idealTree:prePrune ├── jsonpointer@2.0.0
+163 silly idealTree:prePrune ├── keypress@0.2.1
+163 silly idealTree:prePrune ├── log@1.4.0
+163 silly idealTree:prePrune ├── lru-queue@0.1.0
+163 silly idealTree:prePrune ├── memoizee@0.3.9
+163 silly idealTree:prePrune ├── mime-db@1.19.0
+163 silly idealTree:prePrune ├── mime-types@2.1.7
+163 silly idealTree:prePrune ├── mime@1.3.4
+163 silly idealTree:prePrune ├── minimist@0.0.10
+163 silly idealTree:prePrune ├── mpd@1.3.0
+163 silly idealTree:prePrune ├── ms@0.7.1
+163 silly idealTree:prePrune ├── nan@2.0.9
+163 silly idealTree:prePrune ├── next-tick@0.2.2
+163 silly idealTree:prePrune ├── node-promise@0.5.12
+163 silly idealTree:prePrune ├── node-uuid@1.4.7
+163 silly idealTree:prePrune ├── oauth-sign@0.8.0
+163 silly idealTree:prePrune ├── onoff@1.0.3
+163 silly idealTree:prePrune ├── optimist@0.6.1
+163 silly idealTree:prePrune ├── pinkie-promise@1.0.0
+163 silly idealTree:prePrune ├── pinkie@1.0.0
+163 silly idealTree:prePrune ├── process-nextick-args@1.0.3
+163 silly idealTree:prePrune ├── qs@5.2.0
+163 silly idealTree:prePrune ├── readable-stream@2.0.4
+163 silly idealTree:prePrune ├── request@2.65.0
+163 silly idealTree:prePrune ├─┬ serialport@2.0.5
+163 silly idealTree:prePrune │ ├── node-pre-gyp-github@1.0.5
+163 silly idealTree:prePrune │ └─┬ node-pre-gyp@0.6.13
+163 silly idealTree:prePrune │   ├─┬ mkdirp@0.5.1
+163 silly idealTree:prePrune │   │ └── minimist@0.0.8
+163 silly idealTree:prePrune │   ├─┬ nopt@3.0.4
+163 silly idealTree:prePrune │   │ └── abbrev@1.0.7
+163 silly idealTree:prePrune │   ├─┬ npmlog@1.2.1
+163 silly idealTree:prePrune │   │ ├── ansi@0.3.0
+163 silly idealTree:prePrune │   │ ├─┬ are-we-there-yet@1.0.4
+163 silly idealTree:prePrune │   │ │ ├── delegates@0.1.0
+163 silly idealTree:prePrune │   │ │ └─┬ readable-stream@1.1.13
+163 silly idealTree:prePrune │   │ │   ├── core-util-is@1.0.1
+163 silly idealTree:prePrune │   │ │   ├── inherits@2.0.1
+163 silly idealTree:prePrune │   │ │   ├── isarray@0.0.1
+163 silly idealTree:prePrune │   │ │   └── string_decoder@0.10.31
+163 silly idealTree:prePrune │   │ └─┬ gauge@1.2.2
+163 silly idealTree:prePrune │   │   ├── has-unicode@1.0.1
+163 silly idealTree:prePrune │   │   ├─┬ lodash.pad@3.1.1
+163 silly idealTree:prePrune │   │   │ ├── lodash._basetostring@3.0.1
+163 silly idealTree:prePrune │   │   │ └─┬ lodash._createpadding@3.6.1
+163 silly idealTree:prePrune │   │   │   └── lodash.repeat@3.0.1
+163 silly idealTree:prePrune │   │   ├─┬ lodash.padleft@3.1.1
+163 silly idealTree:prePrune │   │   │ ├── lodash._basetostring@3.0.1
+163 silly idealTree:prePrune │   │   │ └─┬ lodash._createpadding@3.6.1
+163 silly idealTree:prePrune │   │   │   └── lodash.repeat@3.0.1
+163 silly idealTree:prePrune │   │   └─┬ lodash.padright@3.1.1
+163 silly idealTree:prePrune │   │     ├── lodash._basetostring@3.0.1
+163 silly idealTree:prePrune │   │     └─┬ lodash._createpadding@3.6.1
+163 silly idealTree:prePrune │   │       └── lodash.repeat@3.0.1
+163 silly idealTree:prePrune │   ├─┬ rc@1.1.2
+163 silly idealTree:prePrune │   │ ├── deep-extend@0.2.11
+163 silly idealTree:prePrune │   │ ├── ini@1.3.4
+163 silly idealTree:prePrune │   │ ├── minimist@1.2.0
+163 silly idealTree:prePrune │   │ └── strip-json-comments@0.1.3
+163 silly idealTree:prePrune │   ├─┬ request@2.65.0
+163 silly idealTree:prePrune │   │ ├── aws-sign2@0.6.0
+163 silly idealTree:prePrune │   │ ├─┬ bl@1.0.0
+163 silly idealTree:prePrune │   │ │ └─┬ readable-stream@2.0.2
+163 silly idealTree:prePrune │   │ │   ├── core-util-is@1.0.1
+163 silly idealTree:prePrune │   │ │   ├── inherits@2.0.1
+163 silly idealTree:prePrune │   │ │   ├── isarray@0.0.1
+163 silly idealTree:prePrune │   │ │   ├── process-nextick-args@1.0.3
+163 silly idealTree:prePrune │   │ │   ├── string_decoder@0.10.31
+163 silly idealTree:prePrune │   │ │   └── util-deprecate@1.0.2
+163 silly idealTree:prePrune │   │ ├── caseless@0.11.0
+163 silly idealTree:prePrune │   │ ├─┬ combined-stream@1.0.5
+163 silly idealTree:prePrune │   │ │ └── delayed-stream@1.0.0
+163 silly idealTree:prePrune │   │ ├── extend@3.0.0
+163 silly idealTree:prePrune │   │ ├── forever-agent@0.6.1
+163 silly idealTree:prePrune │   │ ├─┬ form-data@1.0.0-rc3
+163 silly idealTree:prePrune │   │ │ └── async@1.4.2
+163 silly idealTree:prePrune │   │ ├─┬ har-validator@2.0.2
+163 silly idealTree:prePrune │   │ │ ├─┬ chalk@1.1.1
+163 silly idealTree:prePrune │   │ │ │ ├── ansi-styles@2.1.0
+163 silly idealTree:prePrune │   │ │ │ ├── escape-string-regexp@1.0.3
+163 silly idealTree:prePrune │   │ │ │ ├─┬ has-ansi@2.0.0
+163 silly idealTree:prePrune │   │ │ │ │ └── ansi-regex@2.0.0
+163 silly idealTree:prePrune │   │ │ │ ├─┬ strip-ansi@3.0.0
+163 silly idealTree:prePrune │   │ │ │ │ └── ansi-regex@2.0.0
+163 silly idealTree:prePrune │   │ │ │ └── supports-color@2.0.0
+163 silly idealTree:prePrune │   │ │ ├─┬ commander@2.9.0
+163 silly idealTree:prePrune │   │ │ │ └── graceful-readlink@1.0.1
+163 silly idealTree:prePrune │   │ │ ├─┬ is-my-json-valid@2.12.2
+163 silly idealTree:prePrune │   │ │ │ ├── generate-function@2.0.0
+163 silly idealTree:prePrune │   │ │ │ ├─┬ generate-object-property@1.2.0
+163 silly idealTree:prePrune │   │ │ │ │ └── is-property@1.0.2
+163 silly idealTree:prePrune │   │ │ │ ├── jsonpointer@2.0.0
+163 silly idealTree:prePrune │   │ │ │ └── xtend@4.0.0
+163 silly idealTree:prePrune │   │ │ └─┬ pinkie-promise@1.0.0
+163 silly idealTree:prePrune │   │ │   └── pinkie@1.0.0
+163 silly idealTree:prePrune │   │ ├─┬ hawk@3.1.0
+163 silly idealTree:prePrune │   │ │ ├── boom@2.9.0
+163 silly idealTree:prePrune │   │ │ ├── cryptiles@2.0.5
+163 silly idealTree:prePrune │   │ │ ├── hoek@2.16.3
+163 silly idealTree:prePrune │   │ │ └── sntp@1.0.9
+163 silly idealTree:prePrune │   │ ├─┬ http-signature@0.11.0
+163 silly idealTree:prePrune │   │ │ ├── asn1@0.1.11
+163 silly idealTree:prePrune │   │ │ ├── assert-plus@0.1.5
+163 silly idealTree:prePrune │   │ │ └── ctype@0.5.3
+163 silly idealTree:prePrune │   │ ├── isstream@0.1.2
+163 silly idealTree:prePrune │   │ ├── json-stringify-safe@5.0.1
+163 silly idealTree:prePrune │   │ ├─┬ mime-types@2.1.7
+163 silly idealTree:prePrune │   │ │ └── mime-db@1.19.0
+163 silly idealTree:prePrune │   │ ├── node-uuid@1.4.3
+163 silly idealTree:prePrune │   │ ├── oauth-sign@0.8.0
+163 silly idealTree:prePrune │   │ ├── qs@5.2.0
+163 silly idealTree:prePrune │   │ ├── stringstream@0.0.4
+163 silly idealTree:prePrune │   │ ├── tough-cookie@2.2.0
+163 silly idealTree:prePrune │   │ └── tunnel-agent@0.4.1
+163 silly idealTree:prePrune │   ├─┬ rimraf@2.4.3
+163 silly idealTree:prePrune │   │ └─┬ glob@5.0.15
+163 silly idealTree:prePrune │   │   ├─┬ inflight@1.0.4
+163 silly idealTree:prePrune │   │   │ └── wrappy@1.0.1
+163 silly idealTree:prePrune │   │   ├── inherits@2.0.1
+163 silly idealTree:prePrune │   │   ├─┬ minimatch@3.0.0
+163 silly idealTree:prePrune │   │   │ └─┬ brace-expansion@1.1.1
+163 silly idealTree:prePrune │   │   │   ├── balanced-match@0.2.0
+163 silly idealTree:prePrune │   │   │   └── concat-map@0.0.1
+163 silly idealTree:prePrune │   │   ├─┬ once@1.3.2
+163 silly idealTree:prePrune │   │   │ └── wrappy@1.0.1
+163 silly idealTree:prePrune │   │   └── path-is-absolute@1.0.0
+163 silly idealTree:prePrune │   ├── semver@5.0.3
+163 silly idealTree:prePrune │   ├─┬ tar-pack@2.0.1
+163 silly idealTree:prePrune │   │ ├── debug@0.7.4
+163 silly idealTree:prePrune │   │ ├─┬ fstream-ignore@0.0.7
+163 silly idealTree:prePrune │   │ │ ├── inherits@2.0.1
+163 silly idealTree:prePrune │   │ │ └─┬ minimatch@0.2.14
+163 silly idealTree:prePrune │   │ │   ├── lru-cache@2.7.0
+163 silly idealTree:prePrune │   │ │   └── sigmund@1.0.1
+163 silly idealTree:prePrune │   │ ├─┬ fstream@0.1.31
+163 silly idealTree:prePrune │   │ │ ├── graceful-fs@3.0.8
+163 silly idealTree:prePrune │   │ │ └── inherits@2.0.1
+163 silly idealTree:prePrune │   │ ├── graceful-fs@4.1.2
+163 silly idealTree:prePrune │   │ ├── once@1.1.1
+163 silly idealTree:prePrune │   │ ├─┬ readable-stream@1.0.33
+163 silly idealTree:prePrune │   │ │ ├── core-util-is@1.0.1
+163 silly idealTree:prePrune │   │ │ ├── inherits@2.0.1
+163 silly idealTree:prePrune │   │ │ ├── isarray@0.0.1
+163 silly idealTree:prePrune │   │ │ └── string_decoder@0.10.31
+163 silly idealTree:prePrune │   │ ├── rimraf@2.2.8
+163 silly idealTree:prePrune │   │ ├─┬ tar@0.1.20
+163 silly idealTree:prePrune │   │ │ ├── block-stream@0.0.8
+163 silly idealTree:prePrune │   │ │ └── inherits@2.0.1
+163 silly idealTree:prePrune │   │ └── uid-number@0.0.3
+163 silly idealTree:prePrune │   └─┬ tar@2.2.1
+163 silly idealTree:prePrune │     ├── block-stream@0.0.8
+163 silly idealTree:prePrune │     ├─┬ fstream@1.0.8
+163 silly idealTree:prePrune │     │ └── graceful-fs@4.1.2
+163 silly idealTree:prePrune │     └── inherits@2.0.1
+163 silly idealTree:prePrune ├── sf@0.1.7
+163 silly idealTree:prePrune ├── sntp@1.0.9
+163 silly idealTree:prePrune ├── string_decoder@0.10.31
+163 silly idealTree:prePrune ├── stringstream@0.0.5
+163 silly idealTree:prePrune ├── strip-ansi@3.0.0
+163 silly idealTree:prePrune ├── supports-color@2.0.0
+163 silly idealTree:prePrune ├── timers-ext@0.1.0
+163 silly idealTree:prePrune ├── tough-cookie@2.2.1
+163 silly idealTree:prePrune ├── tunnel-agent@0.4.1
+163 silly idealTree:prePrune ├── underscore@1.8.3
+163 silly idealTree:prePrune ├── util-deprecate@1.0.2
+163 silly idealTree:prePrune ├── wordwrap@0.0.3
+163 silly idealTree:prePrune ├── xbmc@0.5.0
+163 silly idealTree:prePrune └── xtend@4.0.1
+164 silly loadIdealTree Finishing
+165 silly currentTree node-ibus-mediacenter@0.0.0
+165 silly currentTree ├── ansi-regex@2.0.0
+165 silly currentTree ├── ansi-styles@2.1.0
+165 silly currentTree ├── asn1@0.1.11
+165 silly currentTree ├── assert-plus@0.1.5
+165 silly currentTree ├── async@0.9.0
+165 silly currentTree ├── aws-sign2@0.6.0
+165 silly currentTree ├── bindings@1.2.1
+165 silly currentTree ├── bl@1.0.0
+165 silly currentTree ├── boom@2.10.1
+165 silly currentTree ├── caseless@0.11.0
+165 silly currentTree ├── chalk@1.1.1
+165 silly currentTree ├── clarinet@0.11.0
+165 silly currentTree ├── cli-color@1.1.0
+165 silly currentTree ├── combined-stream@1.0.5
+165 silly currentTree ├── commander@2.9.0
+165 silly currentTree ├── core-util-is@1.0.1
+165 silly currentTree ├── cryptiles@2.0.5
+165 silly currentTree ├── ctype@0.5.3
+165 silly currentTree ├── d@0.1.1
+165 silly currentTree ├── debug@2.2.0
+165 silly currentTree ├── delayed-stream@1.0.0
+165 silly currentTree ├── es5-ext@0.10.8
+165 silly currentTree ├── es6-iterator@2.0.0
+165 silly currentTree ├── es6-symbol@3.0.1
+165 silly currentTree ├─┬ es6-weak-map@0.1.4
+165 silly currentTree │ ├── es6-iterator@0.1.3
+165 silly currentTree │ └── es6-symbol@2.0.1
+165 silly currentTree ├── escape-string-regexp@1.0.3
+165 silly currentTree ├── event-emitter@0.3.4
+165 silly currentTree ├── extend@3.0.0
+165 silly currentTree ├── forever-agent@0.6.1
+165 silly currentTree ├─┬ form-data@1.0.0-rc3
+165 silly currentTree │ └── async@1.5.0
+165 silly currentTree ├── generate-function@2.0.0
+165 silly currentTree ├── generate-object-property@1.2.0
+165 silly currentTree ├── github@0.2.4
+165 silly currentTree ├── graceful-readlink@1.0.1
+165 silly currentTree ├── har-validator@2.0.2
+165 silly currentTree ├── has-ansi@2.0.0
+165 silly currentTree ├── hawk@3.1.1
+165 silly currentTree ├── hoek@2.16.3
+165 silly currentTree ├── http-signature@0.11.0
+165 silly currentTree ├── ibus@0.0.8
+165 silly currentTree ├── inherits@2.0.1
+165 silly currentTree ├── is-my-json-valid@2.12.3
+165 silly currentTree ├── is-property@1.0.2
+165 silly currentTree ├── isarray@0.0.1
+165 silly currentTree ├── isstream@0.1.2
+165 silly currentTree ├── json-stringify-safe@5.0.1
+165 silly currentTree ├── jsonpointer@2.0.0
+165 silly currentTree ├── keypress@0.2.1
+165 silly currentTree ├── log@1.4.0
+165 silly currentTree ├── lru-queue@0.1.0
+165 silly currentTree ├── memoizee@0.3.9
+165 silly currentTree ├── mime-db@1.19.0
+165 silly currentTree ├── mime-types@2.1.7
+165 silly currentTree ├── mime@1.3.4
+165 silly currentTree ├── minimist@0.0.10
+165 silly currentTree ├── mpd@1.3.0
+165 silly currentTree ├── ms@0.7.1
+165 silly currentTree ├── nan@2.0.9
+165 silly currentTree ├── next-tick@0.2.2
+165 silly currentTree ├── node-promise@0.5.12
+165 silly currentTree ├── node-uuid@1.4.7
+165 silly currentTree ├── oauth-sign@0.8.0
+165 silly currentTree ├── optimist@0.6.1
+165 silly currentTree ├── pinkie-promise@1.0.0
+165 silly currentTree ├── pinkie@1.0.0
+165 silly currentTree ├── process-nextick-args@1.0.3
+165 silly currentTree ├── qs@5.2.0
+165 silly currentTree ├── readable-stream@2.0.4
+165 silly currentTree ├── request@2.65.0
+165 silly currentTree ├─┬ serialport@2.0.5
+165 silly currentTree │ ├─┬ node-pre-gyp-github@1.0.4
+165 silly currentTree │ │ ├─┬ commander@2.9.0
+165 silly currentTree │ │ │ └── graceful-readlink@1.0.1
+165 silly currentTree │ │ ├── github@0.2.4
+165 silly currentTree │ │ ├── mime@1.3.4
+165 silly currentTree │ │ └─┬ request@2.65.0
+165 silly currentTree │ │   ├── aws-sign2@0.6.0
+165 silly currentTree │ │   ├─┬ bl@1.0.0
+165 silly currentTree │ │   │ └─┬ readable-stream@2.0.3
+165 silly currentTree │ │   │   ├── core-util-is@1.0.1
+165 silly currentTree │ │   │   ├── inherits@2.0.1
+165 silly currentTree │ │   │   ├── isarray@0.0.1
+165 silly currentTree │ │   │   ├── process-nextick-args@1.0.3
+165 silly currentTree │ │   │   ├── string_decoder@0.10.31
+165 silly currentTree │ │   │   └── util-deprecate@1.0.2
+165 silly currentTree │ │   ├── caseless@0.11.0
+165 silly currentTree │ │   ├─┬ combined-stream@1.0.5
+165 silly currentTree │ │   │ └── delayed-stream@1.0.0
+165 silly currentTree │ │   ├── extend@3.0.0
+165 silly currentTree │ │   ├── forever-agent@0.6.1
+165 silly currentTree │ │   ├─┬ form-data@1.0.0-rc3
+165 silly currentTree │ │   │ └── async@1.5.0
+165 silly currentTree │ │   ├─┬ har-validator@2.0.2
+165 silly currentTree │ │   │ ├─┬ chalk@1.1.1
+165 silly currentTree │ │   │ │ ├── ansi-styles@2.1.0
+165 silly currentTree │ │   │ │ ├── escape-string-regexp@1.0.3
+165 silly currentTree │ │   │ │ ├─┬ has-ansi@2.0.0
+165 silly currentTree │ │   │ │ │ └── ansi-regex@2.0.0
+165 silly currentTree │ │   │ │ ├─┬ strip-ansi@3.0.0
+165 silly currentTree │ │   │ │ │ └── ansi-regex@2.0.0
+165 silly currentTree │ │   │ │ └── supports-color@2.0.0
+165 silly currentTree │ │   │ ├─┬ is-my-json-valid@2.12.2
+165 silly currentTree │ │   │ │ ├── generate-function@2.0.0
+165 silly currentTree │ │   │ │ ├─┬ generate-object-property@1.2.0
+165 silly currentTree │ │   │ │ │ └── is-property@1.0.2
+165 silly currentTree │ │   │ │ ├── jsonpointer@2.0.0
+165 silly currentTree │ │   │ │ └── xtend@4.0.0
+165 silly currentTree │ │   │ └─┬ pinkie-promise@1.0.0
+165 silly currentTree │ │   │   └── pinkie@1.0.0
+165 silly currentTree │ │   ├─┬ hawk@3.1.0
+165 silly currentTree │ │   │ ├── boom@2.10.0
+165 silly currentTree │ │   │ ├── cryptiles@2.0.5
+165 silly currentTree │ │   │ ├── hoek@2.16.3
+165 silly currentTree │ │   │ └── sntp@1.0.9
+165 silly currentTree │ │   ├─┬ http-signature@0.11.0
+165 silly currentTree │ │   │ ├── asn1@0.1.11
+165 silly currentTree │ │   │ ├── assert-plus@0.1.5
+165 silly currentTree │ │   │ └── ctype@0.5.3
+165 silly currentTree │ │   ├── isstream@0.1.2
+165 silly currentTree │ │   ├── json-stringify-safe@5.0.1
+165 silly currentTree │ │   ├─┬ mime-types@2.1.7
+165 silly currentTree │ │   │ └── mime-db@1.19.0
+165 silly currentTree │ │   ├── node-uuid@1.4.3
+165 silly currentTree │ │   ├── oauth-sign@0.8.0
+165 silly currentTree │ │   ├── qs@5.2.0
+165 silly currentTree │ │   ├── stringstream@0.0.5
+165 silly currentTree │ │   ├── tough-cookie@2.2.0
+165 silly currentTree │ │   └── tunnel-agent@0.4.1
+165 silly currentTree │ └─┬ node-pre-gyp@0.6.13
+165 silly currentTree │   ├─┬ mkdirp@0.5.1
+165 silly currentTree │   │ └── minimist@0.0.8
+165 silly currentTree │   ├─┬ nopt@3.0.4
+165 silly currentTree │   │ └── abbrev@1.0.7
+165 silly currentTree │   ├─┬ npmlog@1.2.1
+165 silly currentTree │   │ ├── ansi@0.3.0
+165 silly currentTree │   │ ├─┬ are-we-there-yet@1.0.4
+165 silly currentTree │   │ │ ├── delegates@0.1.0
+165 silly currentTree │   │ │ └─┬ readable-stream@1.1.13
+165 silly currentTree │   │ │   ├── core-util-is@1.0.1
+165 silly currentTree │   │ │   ├── inherits@2.0.1
+165 silly currentTree │   │ │   ├── isarray@0.0.1
+165 silly currentTree │   │ │   └── string_decoder@0.10.31
+165 silly currentTree │   │ └─┬ gauge@1.2.2
+165 silly currentTree │   │   ├── has-unicode@1.0.1
+165 silly currentTree │   │   ├─┬ lodash.pad@3.1.1
+165 silly currentTree │   │   │ ├── lodash._basetostring@3.0.1
+165 silly currentTree │   │   │ └─┬ lodash._createpadding@3.6.1
+165 silly currentTree │   │   │   └── lodash.repeat@3.0.1
+165 silly currentTree │   │   ├─┬ lodash.padleft@3.1.1
+165 silly currentTree │   │   │ ├── lodash._basetostring@3.0.1
+165 silly currentTree │   │   │ └─┬ lodash._createpadding@3.6.1
+165 silly currentTree │   │   │   └── lodash.repeat@3.0.1
+165 silly currentTree │   │   └─┬ lodash.padright@3.1.1
+165 silly currentTree │   │     ├── lodash._basetostring@3.0.1
+165 silly currentTree │   │     └─┬ lodash._createpadding@3.6.1
+165 silly currentTree │   │       └── lodash.repeat@3.0.1
+165 silly currentTree │   ├─┬ rc@1.1.2
+165 silly currentTree │   │ ├── deep-extend@0.2.11
+165 silly currentTree │   │ ├── ini@1.3.4
+165 silly currentTree │   │ ├── minimist@1.2.0
+165 silly currentTree │   │ └── strip-json-comments@0.1.3
+165 silly currentTree │   ├─┬ request@2.65.0
+165 silly currentTree │   │ ├── aws-sign2@0.6.0
+165 silly currentTree │   │ ├─┬ bl@1.0.0
+165 silly currentTree │   │ │ └─┬ readable-stream@2.0.2
+165 silly currentTree │   │ │   ├── core-util-is@1.0.1
+165 silly currentTree │   │ │   ├── inherits@2.0.1
+165 silly currentTree │   │ │   ├── isarray@0.0.1
+165 silly currentTree │   │ │   ├── process-nextick-args@1.0.3
+165 silly currentTree │   │ │   ├── string_decoder@0.10.31
+165 silly currentTree │   │ │   └── util-deprecate@1.0.2
+165 silly currentTree │   │ ├── caseless@0.11.0
+165 silly currentTree │   │ ├─┬ combined-stream@1.0.5
+165 silly currentTree │   │ │ └── delayed-stream@1.0.0
+165 silly currentTree │   │ ├── extend@3.0.0
+165 silly currentTree │   │ ├── forever-agent@0.6.1
+165 silly currentTree │   │ ├─┬ form-data@1.0.0-rc3
+165 silly currentTree │   │ │ └── async@1.4.2
+165 silly currentTree │   │ ├─┬ har-validator@2.0.2
+165 silly currentTree │   │ │ ├─┬ chalk@1.1.1
+165 silly currentTree │   │ │ │ ├── ansi-styles@2.1.0
+165 silly currentTree │   │ │ │ ├── escape-string-regexp@1.0.3
+165 silly currentTree │   │ │ │ ├─┬ has-ansi@2.0.0
+165 silly currentTree │   │ │ │ │ └── ansi-regex@2.0.0
+165 silly currentTree │   │ │ │ ├─┬ strip-ansi@3.0.0
+165 silly currentTree │   │ │ │ │ └── ansi-regex@2.0.0
+165 silly currentTree │   │ │ │ └── supports-color@2.0.0
+165 silly currentTree │   │ │ ├─┬ commander@2.9.0
+165 silly currentTree │   │ │ │ └── graceful-readlink@1.0.1
+165 silly currentTree │   │ │ ├─┬ is-my-json-valid@2.12.2
+165 silly currentTree │   │ │ │ ├── generate-function@2.0.0
+165 silly currentTree │   │ │ │ ├─┬ generate-object-property@1.2.0
+165 silly currentTree │   │ │ │ │ └── is-property@1.0.2
+165 silly currentTree │   │ │ │ ├── jsonpointer@2.0.0
+165 silly currentTree │   │ │ │ └── xtend@4.0.0
+165 silly currentTree │   │ │ └─┬ pinkie-promise@1.0.0
+165 silly currentTree │   │ │   └── pinkie@1.0.0
+165 silly currentTree │   │ ├─┬ hawk@3.1.0
+165 silly currentTree │   │ │ ├── boom@2.9.0
+165 silly currentTree │   │ │ ├── cryptiles@2.0.5
+165 silly currentTree │   │ │ ├── hoek@2.16.3
+165 silly currentTree │   │ │ └── sntp@1.0.9
+165 silly currentTree │   │ ├─┬ http-signature@0.11.0
+165 silly currentTree │   │ │ ├── asn1@0.1.11
+165 silly currentTree │   │ │ ├── assert-plus@0.1.5
+165 silly currentTree │   │ │ └── ctype@0.5.3
+165 silly currentTree │   │ ├── isstream@0.1.2
+165 silly currentTree │   │ ├── json-stringify-safe@5.0.1
+165 silly currentTree │   │ ├─┬ mime-types@2.1.7
+165 silly currentTree │   │ │ └── mime-db@1.19.0
+165 silly currentTree │   │ ├── node-uuid@1.4.3
+165 silly currentTree │   │ ├── oauth-sign@0.8.0
+165 silly currentTree │   │ ├── qs@5.2.0
+165 silly currentTree │   │ ├── stringstream@0.0.4
+165 silly currentTree │   │ ├── tough-cookie@2.2.0
+165 silly currentTree │   │ └── tunnel-agent@0.4.1
+165 silly currentTree │   ├─┬ rimraf@2.4.3
+165 silly currentTree │   │ └─┬ glob@5.0.15
+165 silly currentTree │   │   ├─┬ inflight@1.0.4
+165 silly currentTree │   │   │ └── wrappy@1.0.1
+165 silly currentTree │   │   ├── inherits@2.0.1
+165 silly currentTree │   │   ├─┬ minimatch@3.0.0
+165 silly currentTree │   │   │ └─┬ brace-expansion@1.1.1
+165 silly currentTree │   │   │   ├── balanced-match@0.2.0
+165 silly currentTree │   │   │   └── concat-map@0.0.1
+165 silly currentTree │   │   ├─┬ once@1.3.2
+165 silly currentTree │   │   │ └── wrappy@1.0.1
+165 silly currentTree │   │   └── path-is-absolute@1.0.0
+165 silly currentTree │   ├── semver@5.0.3
+165 silly currentTree │   ├─┬ tar-pack@2.0.1
+165 silly currentTree │   │ ├── debug@0.7.4
+165 silly currentTree │   │ ├─┬ fstream-ignore@0.0.7
+165 silly currentTree │   │ │ ├── inherits@2.0.1
+165 silly currentTree │   │ │ └─┬ minimatch@0.2.14
+165 silly currentTree │   │ │   ├── lru-cache@2.7.0
+165 silly currentTree │   │ │   └── sigmund@1.0.1
+165 silly currentTree │   │ ├─┬ fstream@0.1.31
+165 silly currentTree │   │ │ ├── graceful-fs@3.0.8
+165 silly currentTree │   │ │ └── inherits@2.0.1
+165 silly currentTree │   │ ├── graceful-fs@4.1.2
+165 silly currentTree │   │ ├── once@1.1.1
+165 silly currentTree │   │ ├─┬ readable-stream@1.0.33
+165 silly currentTree │   │ │ ├── core-util-is@1.0.1
+165 silly currentTree │   │ │ ├── inherits@2.0.1
+165 silly currentTree │   │ │ ├── isarray@0.0.1
+165 silly currentTree │   │ │ └── string_decoder@0.10.31
+165 silly currentTree │   │ ├── rimraf@2.2.8
+165 silly currentTree │   │ ├─┬ tar@0.1.20
+165 silly currentTree │   │ │ ├── block-stream@0.0.8
+165 silly currentTree │   │ │ └── inherits@2.0.1
+165 silly currentTree │   │ └── uid-number@0.0.3
+165 silly currentTree │   └─┬ tar@2.2.1
+165 silly currentTree │     ├── block-stream@0.0.8
+165 silly currentTree │     ├─┬ fstream@1.0.8
+165 silly currentTree │     │ └── graceful-fs@4.1.2
+165 silly currentTree │     └── inherits@2.0.1
+165 silly currentTree ├── sf@0.1.7
+165 silly currentTree ├── sntp@1.0.9
+165 silly currentTree ├── string_decoder@0.10.31
+165 silly currentTree ├── stringstream@0.0.5
+165 silly currentTree ├── strip-ansi@3.0.0
+165 silly currentTree ├── supports-color@2.0.0
+165 silly currentTree ├── timers-ext@0.1.0
+165 silly currentTree ├── tough-cookie@2.2.1
+165 silly currentTree ├── tunnel-agent@0.4.1
+165 silly currentTree ├── underscore@1.8.3
+165 silly currentTree ├── util-deprecate@1.0.2
+165 silly currentTree ├── wordwrap@0.0.3
+165 silly currentTree ├── xbmc@0.5.0
+165 silly currentTree └── xtend@4.0.1
+166 silly idealTree node-ibus-mediacenter@0.0.0
+166 silly idealTree ├── ansi-regex@2.0.0
+166 silly idealTree ├── ansi-styles@2.1.0
+166 silly idealTree ├── asn1@0.1.11
+166 silly idealTree ├── assert-plus@0.1.5
+166 silly idealTree ├── async@0.9.0
+166 silly idealTree ├── aws-sign2@0.6.0
+166 silly idealTree ├── bindings@1.2.1
+166 silly idealTree ├── bl@1.0.0
+166 silly idealTree ├── boom@2.10.1
+166 silly idealTree ├── caseless@0.11.0
+166 silly idealTree ├── chalk@1.1.1
+166 silly idealTree ├── clarinet@0.11.0
+166 silly idealTree ├── cli-color@1.1.0
+166 silly idealTree ├── combined-stream@1.0.5
+166 silly idealTree ├── commander@2.9.0
+166 silly idealTree ├── core-util-is@1.0.1
+166 silly idealTree ├── cryptiles@2.0.5
+166 silly idealTree ├── ctype@0.5.3
+166 silly idealTree ├── d@0.1.1
+166 silly idealTree ├── debug@2.2.0
+166 silly idealTree ├── delayed-stream@1.0.0
+166 silly idealTree ├─┬ epoll@0.1.16
+166 silly idealTree │ └── nan@2.1.0
+166 silly idealTree ├── es5-ext@0.10.8
+166 silly idealTree ├── es6-iterator@2.0.0
+166 silly idealTree ├── es6-symbol@3.0.1
+166 silly idealTree ├─┬ es6-weak-map@0.1.4
+166 silly idealTree │ ├── es6-iterator@0.1.3
+166 silly idealTree │ └── es6-symbol@2.0.1
+166 silly idealTree ├── escape-string-regexp@1.0.3
+166 silly idealTree ├── event-emitter@0.3.4
+166 silly idealTree ├── extend@3.0.0
+166 silly idealTree ├── forever-agent@0.6.1
+166 silly idealTree ├─┬ form-data@1.0.0-rc3
+166 silly idealTree │ └── async@1.5.0
+166 silly idealTree ├── generate-function@2.0.0
+166 silly idealTree ├── generate-object-property@1.2.0
+166 silly idealTree ├── github@0.2.4
+166 silly idealTree ├── graceful-readlink@1.0.1
+166 silly idealTree ├── har-validator@2.0.2
+166 silly idealTree ├── has-ansi@2.0.0
+166 silly idealTree ├── hawk@3.1.1
+166 silly idealTree ├── hoek@2.16.3
+166 silly idealTree ├── http-signature@0.11.0
+166 silly idealTree ├── ibus@0.0.8
+166 silly idealTree ├── inherits@2.0.1
+166 silly idealTree ├── is-my-json-valid@2.12.3
+166 silly idealTree ├── is-property@1.0.2
+166 silly idealTree ├── isarray@0.0.1
+166 silly idealTree ├── isstream@0.1.2
+166 silly idealTree ├── json-stringify-safe@5.0.1
+166 silly idealTree ├── jsonpointer@2.0.0
+166 silly idealTree ├── keypress@0.2.1
+166 silly idealTree ├── log@1.4.0
+166 silly idealTree ├── lru-queue@0.1.0
+166 silly idealTree ├── memoizee@0.3.9
+166 silly idealTree ├── mime-db@1.19.0
+166 silly idealTree ├── mime-types@2.1.7
+166 silly idealTree ├── mime@1.3.4
+166 silly idealTree ├── minimist@0.0.10
+166 silly idealTree ├── mpd@1.3.0
+166 silly idealTree ├── ms@0.7.1
+166 silly idealTree ├── nan@2.0.9
+166 silly idealTree ├── next-tick@0.2.2
+166 silly idealTree ├── node-promise@0.5.12
+166 silly idealTree ├── node-uuid@1.4.7
+166 silly idealTree ├── oauth-sign@0.8.0
+166 silly idealTree ├── onoff@1.0.3
+166 silly idealTree ├── optimist@0.6.1
+166 silly idealTree ├── pinkie-promise@1.0.0
+166 silly idealTree ├── pinkie@1.0.0
+166 silly idealTree ├── process-nextick-args@1.0.3
+166 silly idealTree ├── qs@5.2.0
+166 silly idealTree ├── readable-stream@2.0.4
+166 silly idealTree ├── request@2.65.0
+166 silly idealTree ├─┬ serialport@2.0.5
+166 silly idealTree │ ├── node-pre-gyp-github@1.0.5
+166 silly idealTree │ └─┬ node-pre-gyp@0.6.13
+166 silly idealTree │   ├─┬ mkdirp@0.5.1
+166 silly idealTree │   │ └── minimist@0.0.8
+166 silly idealTree │   ├─┬ nopt@3.0.4
+166 silly idealTree │   │ └── abbrev@1.0.7
+166 silly idealTree │   ├─┬ npmlog@1.2.1
+166 silly idealTree │   │ ├── ansi@0.3.0
+166 silly idealTree │   │ ├─┬ are-we-there-yet@1.0.4
+166 silly idealTree │   │ │ ├── delegates@0.1.0
+166 silly idealTree │   │ │ └─┬ readable-stream@1.1.13
+166 silly idealTree │   │ │   ├── core-util-is@1.0.1
+166 silly idealTree │   │ │   ├── inherits@2.0.1
+166 silly idealTree │   │ │   ├── isarray@0.0.1
+166 silly idealTree │   │ │   └── string_decoder@0.10.31
+166 silly idealTree │   │ └─┬ gauge@1.2.2
+166 silly idealTree │   │   ├── has-unicode@1.0.1
+166 silly idealTree │   │   ├─┬ lodash.pad@3.1.1
+166 silly idealTree │   │   │ ├── lodash._basetostring@3.0.1
+166 silly idealTree │   │   │ └─┬ lodash._createpadding@3.6.1
+166 silly idealTree │   │   │   └── lodash.repeat@3.0.1
+166 silly idealTree │   │   ├─┬ lodash.padleft@3.1.1
+166 silly idealTree │   │   │ ├── lodash._basetostring@3.0.1
+166 silly idealTree │   │   │ └─┬ lodash._createpadding@3.6.1
+166 silly idealTree │   │   │   └── lodash.repeat@3.0.1
+166 silly idealTree │   │   └─┬ lodash.padright@3.1.1
+166 silly idealTree │   │     ├── lodash._basetostring@3.0.1
+166 silly idealTree │   │     └─┬ lodash._createpadding@3.6.1
+166 silly idealTree │   │       └── lodash.repeat@3.0.1
+166 silly idealTree │   ├─┬ rc@1.1.2
+166 silly idealTree │   │ ├── deep-extend@0.2.11
+166 silly idealTree │   │ ├── ini@1.3.4
+166 silly idealTree │   │ ├── minimist@1.2.0
+166 silly idealTree │   │ └── strip-json-comments@0.1.3
+166 silly idealTree │   ├─┬ request@2.65.0
+166 silly idealTree │   │ ├── aws-sign2@0.6.0
+166 silly idealTree │   │ ├─┬ bl@1.0.0
+166 silly idealTree │   │ │ └─┬ readable-stream@2.0.2
+166 silly idealTree │   │ │   ├── core-util-is@1.0.1
+166 silly idealTree │   │ │   ├── inherits@2.0.1
+166 silly idealTree │   │ │   ├── isarray@0.0.1
+166 silly idealTree │   │ │   ├── process-nextick-args@1.0.3
+166 silly idealTree │   │ │   ├── string_decoder@0.10.31
+166 silly idealTree │   │ │   └── util-deprecate@1.0.2
+166 silly idealTree │   │ ├── caseless@0.11.0
+166 silly idealTree │   │ ├─┬ combined-stream@1.0.5
+166 silly idealTree │   │ │ └── delayed-stream@1.0.0
+166 silly idealTree │   │ ├── extend@3.0.0
+166 silly idealTree │   │ ├── forever-agent@0.6.1
+166 silly idealTree │   │ ├─┬ form-data@1.0.0-rc3
+166 silly idealTree │   │ │ └── async@1.4.2
+166 silly idealTree │   │ ├─┬ har-validator@2.0.2
+166 silly idealTree │   │ │ ├─┬ chalk@1.1.1
+166 silly idealTree │   │ │ │ ├── ansi-styles@2.1.0
+166 silly idealTree │   │ │ │ ├── escape-string-regexp@1.0.3
+166 silly idealTree │   │ │ │ ├─┬ has-ansi@2.0.0
+166 silly idealTree │   │ │ │ │ └── ansi-regex@2.0.0
+166 silly idealTree │   │ │ │ ├─┬ strip-ansi@3.0.0
+166 silly idealTree │   │ │ │ │ └── ansi-regex@2.0.0
+166 silly idealTree │   │ │ │ └── supports-color@2.0.0
+166 silly idealTree │   │ │ ├─┬ commander@2.9.0
+166 silly idealTree │   │ │ │ └── graceful-readlink@1.0.1
+166 silly idealTree │   │ │ ├─┬ is-my-json-valid@2.12.2
+166 silly idealTree │   │ │ │ ├── generate-function@2.0.0
+166 silly idealTree │   │ │ │ ├─┬ generate-object-property@1.2.0
+166 silly idealTree │   │ │ │ │ └── is-property@1.0.2
+166 silly idealTree │   │ │ │ ├── jsonpointer@2.0.0
+166 silly idealTree │   │ │ │ └── xtend@4.0.0
+166 silly idealTree │   │ │ └─┬ pinkie-promise@1.0.0
+166 silly idealTree │   │ │   └── pinkie@1.0.0
+166 silly idealTree │   │ ├─┬ hawk@3.1.0
+166 silly idealTree │   │ │ ├── boom@2.9.0
+166 silly idealTree │   │ │ ├── cryptiles@2.0.5
+166 silly idealTree │   │ │ ├── hoek@2.16.3
+166 silly idealTree │   │ │ └── sntp@1.0.9
+166 silly idealTree │   │ ├─┬ http-signature@0.11.0
+166 silly idealTree │   │ │ ├── asn1@0.1.11
+166 silly idealTree │   │ │ ├── assert-plus@0.1.5
+166 silly idealTree │   │ │ └── ctype@0.5.3
+166 silly idealTree │   │ ├── isstream@0.1.2
+166 silly idealTree │   │ ├── json-stringify-safe@5.0.1
+166 silly idealTree │   │ ├─┬ mime-types@2.1.7
+166 silly idealTree │   │ │ └── mime-db@1.19.0
+166 silly idealTree │   │ ├── node-uuid@1.4.3
+166 silly idealTree │   │ ├── oauth-sign@0.8.0
+166 silly idealTree │   │ ├── qs@5.2.0
+166 silly idealTree │   │ ├── stringstream@0.0.4
+166 silly idealTree │   │ ├── tough-cookie@2.2.0
+166 silly idealTree │   │ └── tunnel-agent@0.4.1
+166 silly idealTree │   ├─┬ rimraf@2.4.3
+166 silly idealTree │   │ └─┬ glob@5.0.15
+166 silly idealTree │   │   ├─┬ inflight@1.0.4
+166 silly idealTree │   │   │ └── wrappy@1.0.1
+166 silly idealTree │   │   ├── inherits@2.0.1
+166 silly idealTree │   │   ├─┬ minimatch@3.0.0
+166 silly idealTree │   │   │ └─┬ brace-expansion@1.1.1
+166 silly idealTree │   │   │   ├── balanced-match@0.2.0
+166 silly idealTree │   │   │   └── concat-map@0.0.1
+166 silly idealTree │   │   ├─┬ once@1.3.2
+166 silly idealTree │   │   │ └── wrappy@1.0.1
+166 silly idealTree │   │   └── path-is-absolute@1.0.0
+166 silly idealTree │   ├── semver@5.0.3
+166 silly idealTree │   ├─┬ tar-pack@2.0.1
+166 silly idealTree │   │ ├── debug@0.7.4
+166 silly idealTree │   │ ├─┬ fstream-ignore@0.0.7
+166 silly idealTree │   │ │ ├── inherits@2.0.1
+166 silly idealTree │   │ │ └─┬ minimatch@0.2.14
+166 silly idealTree │   │ │   ├── lru-cache@2.7.0
+166 silly idealTree │   │ │   └── sigmund@1.0.1
+166 silly idealTree │   │ ├─┬ fstream@0.1.31
+166 silly idealTree │   │ │ ├── graceful-fs@3.0.8
+166 silly idealTree │   │ │ └── inherits@2.0.1
+166 silly idealTree │   │ ├── graceful-fs@4.1.2
+166 silly idealTree │   │ ├── once@1.1.1
+166 silly idealTree │   │ ├─┬ readable-stream@1.0.33
+166 silly idealTree │   │ │ ├── core-util-is@1.0.1
+166 silly idealTree │   │ │ ├── inherits@2.0.1
+166 silly idealTree │   │ │ ├── isarray@0.0.1
+166 silly idealTree │   │ │ └── string_decoder@0.10.31
+166 silly idealTree │   │ ├── rimraf@2.2.8
+166 silly idealTree │   │ ├─┬ tar@0.1.20
+166 silly idealTree │   │ │ ├── block-stream@0.0.8
+166 silly idealTree │   │ │ └── inherits@2.0.1
+166 silly idealTree │   │ └── uid-number@0.0.3
+166 silly idealTree │   └─┬ tar@2.2.1
+166 silly idealTree │     ├── block-stream@0.0.8
+166 silly idealTree │     ├─┬ fstream@1.0.8
+166 silly idealTree │     │ └── graceful-fs@4.1.2
+166 silly idealTree │     └── inherits@2.0.1
+166 silly idealTree ├── sf@0.1.7
+166 silly idealTree ├── sntp@1.0.9
+166 silly idealTree ├── string_decoder@0.10.31
+166 silly idealTree ├── stringstream@0.0.5
+166 silly idealTree ├── strip-ansi@3.0.0
+166 silly idealTree ├── supports-color@2.0.0
+166 silly idealTree ├── timers-ext@0.1.0
+166 silly idealTree ├── tough-cookie@2.2.1
+166 silly idealTree ├── tunnel-agent@0.4.1
+166 silly idealTree ├── underscore@1.8.3
+166 silly idealTree ├── util-deprecate@1.0.2
+166 silly idealTree ├── wordwrap@0.0.3
+166 silly idealTree ├── xbmc@0.5.0
+166 silly idealTree └── xtend@4.0.1
+167 silly generateActionsToTake Starting
+168 silly install generateActionsToTake
+169 warn checkPermissions Missing write access to /Users/robert/work/node-ibus-mediacenter/node_modules
+170 silly rollbackFailedOptional Starting
+171 silly rollbackFailedOptional Finishing
+172 silly runTopLevelLifecycles Starting
+173 silly runTopLevelLifecycles Finishing
+174 silly install printInstalled
+175 warn EPACKAGEJSON node-ibus-mediacenter@0.0.0 No repository field.
+176 warn EPACKAGEJSON node-ibus-mediacenter@0.0.0 No license field.
+177 verbose stack Error: EACCES, access '/Users/robert/work/node-ibus-mediacenter/node_modules'
+177 verbose stack     at module.exports (/usr/local/lib/node_modules/npm/lib/install/access-error.js:4:18)
+177 verbose stack     at /usr/local/lib/node_modules/npm/lib/install/writable.js:30:25
+177 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:230:16
+177 verbose stack     at Object.oncomplete (fs.js:107:15)
+178 verbose cwd /Users/robert/work/node-ibus-mediacenter/src
+179 error Darwin 14.5.0
+180 error argv "node" "/usr/local/bin/npm" "install"
+181 error node v0.10.26
+182 error npm  v3.3.5
+183 error path /Users/robert/work/node-ibus-mediacenter/node_modules
+184 error code EACCES
+185 error Error: EACCES, access '/Users/robert/work/node-ibus-mediacenter/node_modules'
+185 error     at module.exports (/usr/local/lib/node_modules/npm/lib/install/access-error.js:4:18)
+185 error     at /usr/local/lib/node_modules/npm/lib/install/writable.js:30:25
+185 error     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:230:16
+185 error     at Object.oncomplete (fs.js:107:15)
+185 error  { [Error: EACCES, access '/Users/robert/work/node-ibus-mediacenter/node_modules']
+185 error   code: 'EACCES',
+185 error   path: '/Users/robert/work/node-ibus-mediacenter/node_modules' }
+186 error Please try running this command again as root/Administrator.
+187 verbose exit [ 1, true ]

@@ -1,9 +1,9 @@
 var Log = require('log'),
-    log = new Log('info'),
+    log = new Log('debug'),
     clc = require('cli-color');
 
 // Respond to Ibus Events
-var IbusEventClient = function(ibusInterface, remoteControlClient) {
+var IbusEventClient = function() {
 
     // self reference
     var _self = this;
@@ -11,26 +11,38 @@ var IbusEventClient = function(ibusInterface, remoteControlClient) {
     // exposed data
     this.init = init;
     this.deviceName = 'IbusEventClient';
+    this.ibusInterface = {};
+    this.remoteControlClient = {};
+    this.remoteControlClients = [];
 
-    // events
-    ibusInterface.on('data', onData);
+    // exposed methods
+    this.init = init;
+    this.setRemoteControlClient = setRemoteControlClient;
 
     // local data
     //var dataInfo = new Buffer([0xa5, 0x63, 0x01]);
 
     // implementation
-    function init() {
+    function init(ibusInterface) {
+        _self.ibusInterface = ibusInterface;
+         
+         // events
+        _self.ibusInterface.on('data', onData);
+    }
 
+    function setRemoteControlClient(key, remoteControlClient) {
+        _self.remoteControlClients[key] = remoteControlClient;
     }
 
     function onData(data) {
- 
+        log.debug('[IbusDebuggerListener] ', data);
+
         var cmpData = compareify(data.src, data.dst, data.msg);
 
         switch (cmpData) {
             case (compareify('f0', '68', new Buffer([0x48, 0x11]))):
                 // 1
-                remoteControlClient.back();
+                _self.remoteControlClients['xbmc'].back();
                 break;
 
             case (compareify('f0', '68', new Buffer([0x48, 0x01]))):
@@ -41,27 +53,27 @@ var IbusEventClient = function(ibusInterface, remoteControlClient) {
 
             case (compareify('f0', '68', new Buffer([0x48, 0x12]))):
                 // 3
-                remoteControlClient.left();
+                _self.remoteControlClients['xbmc'].left();
                 break;
 
             case (compareify('f0', '68', new Buffer([0x48, 0x02]))):
                 // 4
-                remoteControlClient.right();
+                _self.remoteControlClients['xbmc'].right();
                 break;
 
             case (compareify('f0', '68', new Buffer([0x48, 0x13]))):
                 // 5
-                remoteControlClient.up();
+                _self.remoteControlClients['xbmc'].up();
                 break;
 
             case (compareify('f0', '68', new Buffer([0x48, 0x03]))):
                 // 6
-                remoteControlClient.down();
+                _self.remoteControlClients['xbmc'].down();
                 break;
 
             case (compareify('f0', '68', new Buffer([0x48, 0x05]))):
                 // nav turn knob push
-                remoteControlClient.select();
+                _self.remoteControlClients['xbmc'].select();
                 break;
 
             case (compareify('f0', '68', new Buffer([0x49, 0x00]))):
