@@ -27,7 +27,12 @@ var KeyboardEventListener = function() {
 
         // listen for the "keypress" event
         process.stdin.on('keypress', function(ch, key) {
-            //console.log('got "keypress"',ch, key);
+            //console.log('got "keypress"', ch, key);
+            if (!(key && key.name)) {
+                key = {
+                    name: ch
+                }
+            }
 
             if (key && key.ctrl && key.name == 'c') {
                 process.emit('SIGINT');
@@ -62,6 +67,14 @@ var KeyboardEventListener = function() {
                 _self.remoteControlClient['ibus'].select();
             }
 
+            if (key.name === '[') {
+                _self.remoteControlClient['ibus'].srl();
+            }
+
+            if (key.name === ']') {
+                _self.remoteControlClient['ibus'].srr();
+            }
+
 
             if (key.name === 'up') {
                 _self.remoteControlClient['xbmc'].up();
@@ -90,7 +103,7 @@ var KeyboardEventListener = function() {
         process.stdin.setRawMode(true);
         process.stdin.resume();
 
-        if(successFn) {
+        if (successFn) {
             successFn();
         }
     }

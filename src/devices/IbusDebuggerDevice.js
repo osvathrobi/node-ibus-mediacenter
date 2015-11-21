@@ -19,6 +19,8 @@ var IbusDebuggerDevice = function() {
     this.right = simulateRight;
     this.back = simulateBack;
     this.select = simulateSelect;
+    this.srr = simulateRotateRight;
+    this.srl = simulateRotateLeft;
 
     // local data
     this.ibusInterface = {};
@@ -56,6 +58,23 @@ var IbusDebuggerDevice = function() {
             console.log('// ' + data.msg.toString('ascii'));
             console.log('ibusInterface.sendMessage({src: 0x' + data.src + ',dst: 0x' + data.dst + ', msg: new Buffer([' + msg.substr(2), '])});');
         }
+    }
+
+
+    function simulateRotateLeft() {
+        _self.ibusInterface.sendMessage({
+            src: 0xf0,
+            dst: 0x68,
+            msg: new Buffer([0x49, 0x03])
+        });
+    }
+
+    function simulateRotateRight() {
+        _self.ibusInterface.sendMessage({
+            src: 0xf0,
+            dst: 0x68,
+            msg: new Buffer([0x49, 0x83])
+        });
     }
 
 
