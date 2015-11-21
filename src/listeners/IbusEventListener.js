@@ -48,23 +48,23 @@ var IbusEventClient = function() {
 
         if (isEq(cmpData, compareify('f0', '68', new Buffer([0x48, 0x11])))) {
             // 1
-            _self.remoteControlClients['xbmc'].back();
+            _self.remoteControlClients['xbmc'].select();
         }
 
         if (isEq(cmpData, compareify('f0', '68', new Buffer([0x48, 0x01])))) {
             // 2
-            _self.remoteControlClients['xbmc'].contextMenu();
+            _self.remoteControlClients['xbmc'].back();
         }
 
 
         if (isEq(cmpData, compareify('f0', '68', new Buffer([0x48, 0x12])))) {
             // 3
-            _self.remoteControlClients['xbmc'].left();
+            _self.remoteControlClients['xbmc'].contextMenu();
         }
 
         if (isEq(cmpData, compareify('f0', '68', new Buffer([0x48, 0x02])))) {
             // 4
-            _self.remoteControlClients['xbmc'].right();
+            //_self.remoteControlClients['xbmc'].right();
         }
 
         if (isEq(cmpData, compareify('f0', '68', new Buffer([0x48, 0x13])))) {

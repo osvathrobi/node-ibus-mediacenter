@@ -122,7 +122,7 @@ var IbusDebuggerDevice = function() {
         _self.ibusInterface.sendMessage({
             src: 0xf0,
             dst: 0x68,
-            msg: new Buffer([0x48, 0x11])
+            msg: new Buffer([0x48, 0x01])
         });
     }
 
