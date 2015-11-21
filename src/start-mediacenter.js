@@ -20,7 +20,11 @@ if (cluster.isMaster) {
     var IbusInterface = require('ibus').IbusInterface;
     var IbusDevices = require('ibus').IbusDevices;
 
-    //var PibusHw4Handler = require('./adapters/PibusHw4Handler.js')
+    try {
+        var PibusHw4Handler = require('./adapters/PibusHw4Handler.js')
+    } catch (e) {
+        log.info('Raspberry pi not found..', e);
+    }
 
     var MK4ToMk3CDTextDevice = require('./devices/MK4ToMk3CDTextDevice.js');
     var GraphicsNavigationOutputDevice = require('./devices/GraphicsNavigationOutputDevice.js');
@@ -33,8 +37,8 @@ if (cluster.isMaster) {
 
     // config
     //var device = '/dev/ttys003';
-    //var device = '/dev/ttyAMA0';
-    var device = '/dev/cu.usbserial-A601HPGR';
+    var device = '/dev/ttyAMA0';
+    //var device = '/dev/cu.usbserial-A601HPGR';
 
 
     // IBUS communication interface
@@ -47,7 +51,7 @@ if (cluster.isMaster) {
     //var mpc = new MpdClient();
 
     // Xbmc Client
-    var xbmcc = new XbmcClient();    
+    var xbmcc = new XbmcClient();
 
     // Ibus Event Client
     var ibusEventClient = new IbusEventClient();
@@ -106,7 +110,7 @@ if (cluster.isMaster) {
 
     function startup(successFn) {
         // init ibus serial interface
-        ibusInterface.startup();        
+        ibusInterface.startup();
 
         // ibus debugger
         ibusDebuggerDevice.init(ibusInterface, []);
@@ -117,7 +121,7 @@ if (cluster.isMaster) {
         // init keyboard listeren
         keyboardEventListener.init();
         keyboardEventListener.setRemoteControlClient('xbmc', xbmcc);
-        keyboardEventListener.setRemoteControlClient('ibus', ibusDebuggerDevice);        
+        keyboardEventListener.setRemoteControlClient('ibus', ibusDebuggerDevice);
 
         // init ibus event client
         ibusEventClient.init(ibusInterface);
