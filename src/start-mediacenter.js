@@ -107,15 +107,15 @@ if (cluster.isMaster) {
         ibusInterface.startup();
 
         // ibus debugger
-        ibusDebuggerDevice.init(ibusInterface, []);
+        //ibusDebuggerDevice.init(ibusInterface, []);
 
         // xbmc client startup
         xbmcc.init();
 
         // init keyboard listeren
-        keyboardEventListener.init();
-        keyboardEventListener.setRemoteControlClient('xbmc', xbmcc);
-        keyboardEventListener.setRemoteControlClient('ibus', ibusDebuggerDevice);
+        //keyboardEventListener.init();
+        //keyboardEventListener.setRemoteControlClient('xbmc', xbmcc);
+        //keyboardEventListener.setRemoteControlClient('ibus', ibusDebuggerDevice);
 
         // init ibus event client
         ibusEventClient.init(ibusInterface);
