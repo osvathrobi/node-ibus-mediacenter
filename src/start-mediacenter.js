@@ -20,12 +20,6 @@ if (cluster.isMaster) {
     var IbusInterface = require('ibus').IbusInterface;
     var IbusDevices = require('ibus').IbusDevices;
 
-    try {
-        var PibusHw4Handler = require('./adapters/PibusHw4Handler.js')
-    } catch (e) {
-        log.info('Raspberry pi not found..', e);
-    }
-
     var MK4ToMk3CDTextDevice = require('./devices/MK4ToMk3CDTextDevice.js');
     var GraphicsNavigationOutputDevice = require('./devices/GraphicsNavigationOutputDevice.js');
     var IbusDebuggerDevice = require('./devices/IbusDebuggerDevice.js');
