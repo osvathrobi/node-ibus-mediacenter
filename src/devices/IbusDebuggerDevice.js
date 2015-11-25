@@ -42,8 +42,8 @@ var IbusDebuggerDevice = function() {
     }
 
     function onData(data) {
-        log.debug('[IbusDebuggerListener] ', data);
-        //printReadableMessage(data);
+        //log.debug('[IbusDebuggerListener] ', data);
+        printReadableMessage(data);
     }
 
     function printReadableMessage(data) {
@@ -54,9 +54,11 @@ var IbusDebuggerDevice = function() {
             for (var i = 0; i < data.msg.length; i++) {
                 msg += ', 0x' + ((data.msg[i] < 0x10) ? '0' : '') + data.msg[i].toString(16);
             }
+            
+            log.info('[IbusDebuggerDevice] ', data);
 
-            console.log('// ' + data.msg.toString('ascii'));
-            console.log('ibusInterface.sendMessage({src: 0x' + data.src + ',dst: 0x' + data.dst + ', msg: new Buffer([' + msg.substr(2), '])});');
+            //console.log('// ' + data.msg.toString('ascii'));
+            //console.log('ibusInterface.sendMessage({src: 0x' + data.src + ',dst: 0x' + data.dst + ', msg: new Buffer([' + msg.substr(2), '])});');
         }
     }
 

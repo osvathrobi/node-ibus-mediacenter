@@ -42,7 +42,7 @@ var IbusEventClient = function() {
     }
 
     function onData(data) {
-        log.debug('[IbusDebuggerListener] ', data);
+        //log.debug('[IbusEventListener] ', data);
 
         var cmpData = compareify(data.src, data.dst, data.msg);
 
@@ -69,96 +69,106 @@ var IbusEventClient = function() {
 
         if (isEq(cmpData, compareify('f0', '68', new Buffer([0x48, 0x13])))) {
             // 5
-            _self.remoteControlClients['xbmc'].up();
+            _self.remoteControlClients['xbmc'].left();
         }
 
         if (isEq(cmpData, compareify('f0', '68', new Buffer([0x48, 0x03])))) {
             // 6
-            _self.remoteControlClients['xbmc'].down();
+            _self.remoteControlClients['xbmc'].right();
         }
 
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x48, 0x05])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x48, 0x05])))) {
             // nav turn knob push
             _self.remoteControlClients['xbmc'].select();
         }
 
+        if (isEq(cmpData, compareify('50', '68', new Buffer([0x3b, 0x28])))) {
+            // nav turn knob push
+            _self.remoteControlClients['xbmc'].previous();
+        }
+
+        if (isEq(cmpData, compareify('50', '68', new Buffer([0x3b, 0x21])))) {
+            // nav turn knob push
+            _self.remoteControlClients['xbmc'].next();
+        }
+
 
         // TURN WHEEL LEFT
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x01])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x01])))) {
             // 49 0n - rotate left 1..9
-            repeat(_self.remoteControlClients['xbmc'].left, 1);
+            repeat(_self.remoteControlClients['xbmc'].down, 1);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x02])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x02])))) {
             // 49 0n - rotate left 1..9
-            repeat(_self.remoteControlClients['xbmc'].left, 1);
+            repeat(_self.remoteControlClients['xbmc'].down, 1);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x03])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x03])))) {
             // 49 0n - rotate left 1..9
-            repeat(_self.remoteControlClients['xbmc'].left, 2);
+            repeat(_self.remoteControlClients['xbmc'].down, 2);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x04])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x04])))) {
             // 49 0n - rotate left 1..9
-            repeat(_self.remoteControlClients['xbmc'].left, 2);
+            repeat(_self.remoteControlClients['xbmc'].down, 2);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x05])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x05])))) {
             // 49 0n - rotate left 1..9
-            repeat(_self.remoteControlClients['xbmc'].left, 3);
+            repeat(_self.remoteControlClients['xbmc'].down, 3);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x06])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x06])))) {
             // 49 0n - rotate left 1..9
-            repeat(_self.remoteControlClients['xbmc'].left, 3);
+            repeat(_self.remoteControlClients['xbmc'].down, 3);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x7])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x7])))) {
             // 49 0n - rotate left 1..9
-            repeat(_self.remoteControlClients['xbmc'].left, 3);
+            repeat(_self.remoteControlClients['xbmc'].down, 3);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x08])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x08])))) {
             // 49 0n - rotate left 1..9
-            repeat(_self.remoteControlClients['xbmc'].left, 4);
+            repeat(_self.remoteControlClients['xbmc'].down, 4);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x09])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x09])))) {
             // 49 0n - rotate left 1..9
-            repeat(_self.remoteControlClients['xbmc'].left, 4);
+            repeat(_self.remoteControlClients['xbmc'].down, 4);
         }
 
 
 
         // TURN WHEEL RIGHT
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x81])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x81])))) {
             // 49 8n - rotate right 1..9                
-            repeat(_self.remoteControlClients['xbmc'].right, 1);
+            repeat(_self.remoteControlClients['xbmc'].up, 1);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x82])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x82])))) {
             // 49 8n - rotate right 1..9
-            repeat(_self.remoteControlClients['xbmc'].right, 1);
+            repeat(_self.remoteControlClients['xbmc'].up, 1);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x83])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x83])))) {
             // 49 8n - rotate right 1..9
-            repeat(_self.remoteControlClients['xbmc'].right, 2);
+            repeat(_self.remoteControlClients['xbmc'].up, 2);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x84])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x84])))) {
             // 49 8n - rotate right 1..9
-            repeat(_self.remoteControlClients['xbmc'].right, 2);
+            repeat(_self.remoteControlClients['xbmc'].up, 2);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x85])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x85])))) {
             // 49 8n - rotate right 1..9
-            repeat(_self.remoteControlClients['xbmc'].right, 3);
+            repeat(_self.remoteControlClients['xbmc'].up, 3);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x86])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x86])))) {
             // 49 8n - rotate right 1..9
-            repeat(_self.remoteControlClients['xbmc'].right, 3);
+            repeat(_self.remoteControlClients['xbmc'].up, 3);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x87])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x87])))) {
             // 49 8n - rotate right 1..9
-            repeat(_self.remoteControlClients['xbmc'].right, 3);
+            repeat(_self.remoteControlClients['xbmc'].up, 3);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x88])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x88])))) {
             // 49 8n - rotate right 1..9
-            repeat(_self.remoteControlClients['xbmc'].right, 4);
+            repeat(_self.remoteControlClients['xbmc'].up, 4);
         }
-        if (isEq(cmpData, compareify('f0', '68', new Buffer([0x49, 0x89])))) {
+        if (isEq(cmpData, compareify('f0', '3b', new Buffer([0x49, 0x89])))) {
             // 49 8n - rotate right 1..9
-            repeat(_self.remoteControlClients['xbmc'].right, 4);
+            repeat(_self.remoteControlClients['xbmc'].up, 4);
         }
 
     }

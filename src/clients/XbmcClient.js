@@ -23,6 +23,8 @@ var XbmcClient = function() {
     _self.select = select;
     _self.back = back;
     _self.contextMenu = contextMenu;
+    _self.previous = previous;
+    _self.next = next;
 
     // events
 
@@ -59,6 +61,15 @@ var XbmcClient = function() {
     xbmcApi.on('error', function(e) {
         console.log(e);
     });
+
+    function previous() {
+        xbmcApi.input.ExecuteAction('skipprevious');
+    }
+
+    function next() {
+        console.log('sending next');
+        xbmcApi.input.ExecuteAction('skipnext');
+    }
 
     function up() {
         xbmcApi.input['Up']();
